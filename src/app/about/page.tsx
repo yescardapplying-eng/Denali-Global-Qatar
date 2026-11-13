@@ -101,13 +101,15 @@ export default function AboutPage() {
             {/* Emblem Card */}
             <div className="lg:col-span-5">
               <div className="p-8 sm:p-10 rounded-2xl bg-[#0B2035] text-white border border-[#1F4965] shadow-xl space-y-6 relative overflow-hidden">
-                <div className="relative h-20 w-56 mx-auto sm:mx-0">
-                  <Image
-                    src="/logo/denali-logo-horizontal-white.png"
-                    alt="Denali Global Logo"
-                    fill
-                    className="object-contain object-left"
-                  />
+                <div className="inline-flex items-center px-4 py-3 rounded-xl bg-white shadow-md">
+                  <div className="relative h-12 sm:h-14 w-56 sm:w-64" style={{ maxWidth: '280px', maxHeight: '56px' }}>
+                    <Image
+                      src="/logo/denali-logo-normal.png"
+                      alt="Denali Global Trading and Contracting"
+                      fill
+                      className="object-contain object-left"
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-3 border-t border-[#1F4965] pt-5 text-sm text-[#A9B7C3]">

@@ -13,15 +13,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-[#1F4965]/60">
           {/* Column 1: Company Profile & Logo */}
           <div className="lg:col-span-4 space-y-4">
-            <Link href="/" className="inline-block">
-              <div className="relative h-12 w-64" style={{ maxWidth: '260px', maxHeight: '48px', minHeight: '40px' }}>
-                <Image
-                  src="/logo/denali-logo-horizontal-white.png"
-                  alt="Denali Global Trading and Contracting"
-                  fill
-                  sizes="260px"
-                  className="object-contain object-left"
-                />
+            <Link href="/" className="inline-block group">
+              <div className="bg-white px-3.5 py-2 rounded-xl shadow-sm border border-white/20 inline-flex items-center group-hover:shadow-md transition-all">
+                <div className="relative h-10 w-56 sm:w-60" style={{ maxWidth: '240px', maxHeight: '42px', minHeight: '36px' }}>
+                  <Image
+                    src="/logo/denali-logo-normal.png"
+                    alt="Denali Global Trading and Contracting"
+                    fill
+                    sizes="240px"
+                    className="object-contain object-left group-hover:scale-[1.02] transition-transform"
+                  />
+                </div>
               </div>
             </Link>
             <p className="text-[#A9B7C3] text-sm leading-relaxed pr-4">
