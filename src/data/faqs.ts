@@ -144,3 +144,4 @@ export const contactFaqs: FAQItem[] = [
     answer: "Commercial clients holding active Annual Maintenance Contracts have access to dedicated 24/7 emergency dispatch lines for rapid technician deployment."
   }
 ];
+

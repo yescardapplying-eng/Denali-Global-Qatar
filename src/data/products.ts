@@ -745,3 +745,4 @@ export const productCategories = [
   "Fire Fighting & Protection",
   "Tools & Industrial Equipment"
 ];
+

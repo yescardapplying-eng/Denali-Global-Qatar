@@ -343,3 +343,4 @@ export const brandCategories = [
   "Fire Fighting & Protection",
   "Tools & Industrial Equipment"
 ];
+

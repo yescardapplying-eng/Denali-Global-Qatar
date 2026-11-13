@@ -57,3 +57,4 @@ export const companyData: CompanyInfo = {
   },
   copyrightYear: 2026
 };
+

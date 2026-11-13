@@ -33,3 +33,4 @@ export const legalLinks: NavItem[] = [
   { name: "Terms & Conditions", href: "/terms-and-conditions" },
   { name: "Cookie Policy", href: "/cookie-policy" },
 ];
+

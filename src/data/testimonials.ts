@@ -71,3 +71,4 @@ export const testimonialsData: TestimonialItem[] = [
     isPlaceholder: true
   }
 ];
+

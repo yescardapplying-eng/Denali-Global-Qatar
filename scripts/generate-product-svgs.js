@@ -450,3 +450,4 @@ for (const [filename, item] of Object.entries(svgs)) {
   fs.writeFileSync(path.join(dir, filename), content);
 }
 console.log("Successfully generated", Object.keys(svgs).length, "SVG product graphics!");
+
