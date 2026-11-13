@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Column 1: Company Profile & Logo */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-block">
-              <div className="relative h-12 w-64">
+              <div className="relative h-12 w-64" style={{ maxWidth: '260px', maxHeight: '48px', minHeight: '40px' }}>
                 <Image
                   src="/logo/denali-logo-horizontal-white.png"
                   alt="Denali Global Trading and Contracting"

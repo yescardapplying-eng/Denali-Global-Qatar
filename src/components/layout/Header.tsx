@@ -87,7 +87,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Main Horizontal Logo */}
           <Link href="/" className="flex items-center group relative z-10">
-            <div className="relative h-11 w-52 sm:h-12 sm:w-64 md:h-13 md:w-72">
+            <div className="relative h-11 w-52 sm:h-12 sm:w-64 md:h-13 md:w-72" style={{ maxWidth: '280px', maxHeight: '52px', minHeight: '40px' }}>
               <Image
                 src="/logo/denali-logo-horizontal.png"
                 alt="Denali Global Trading and Contracting"
@@ -178,7 +178,7 @@ export default function Header() {
           <div>
             {/* Drawer Header */}
             <div className="p-4 border-b border-[#DCE5EB] flex items-center justify-between bg-[#F5F8FA]">
-              <div className="relative h-10 w-44">
+              <div className="relative h-10 w-44" style={{ maxWidth: '180px', maxHeight: '40px', minHeight: '36px' }}>
                 <Image
                   src="/logo/denali-logo-horizontal.png"
                   alt="Denali Global"
