@@ -77,14 +77,14 @@ export default function BusinessSolutions() {
                       {item.shortDescription}
                     </p>
 
-                    {/* Key Brands Tags */}
+                    {/* Key Technical Features Tags */}
                     <div className="pt-2 flex flex-wrap gap-1.5">
-                      {item.keyBrands.slice(0, 3).map((brand, i) => (
+                      {item.features.slice(0, 2).map((feat, i) => (
                         <span
                           key={i}
                           className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#F4F6F9] border border-[#AFC0D2]/50 text-[#002858]"
                         >
-                          {brand}
+                          {feat}
                         </span>
                       ))}
                     </div>

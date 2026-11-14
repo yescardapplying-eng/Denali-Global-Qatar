@@ -17,8 +17,8 @@ export const homepageFaqs: FAQItem[] = [
   },
   {
     id: "hp-faq-3",
-    question: "Which international brands does Denali work with?",
-    answer: "We work with over 35 established global manufacturers, including Rheem, Soler & Palau (S&P), Weicco, Hattersley, Frese, Clima Uno, Mueller Industries, Alfa Laval, Patterson Fire Pumps, Reliable Sprinklers, Winters Instruments, and DEWALT."
+    question: "How does Denali Global ensure equipment quality and compliance?",
+    answer: "All engineering equipment and materials supplied by Denali Global conform to rigorous international manufacturing standards (ISO, Eurovent, AHRI, UL, FM) and are fully compliant with Qatar Civil Defense (QCDD) and Kahramaa engineering specifications."
   },
   {
     id: "hp-faq-4",
@@ -73,21 +73,21 @@ export const technicalServicesFaqs: FAQItem[] = [
   }
 ];
 
-export const brandsFaqs: FAQItem[] = [
+export const complianceFaqs: FAQItem[] = [
   {
     id: "br-faq-1",
-    question: "Are all listed brand products supplied with genuine manufacturer warranties?",
-    answer: "Yes. All engineering equipment and materials are sourced directly through verified manufacturer channels and accompanied by authentic manufacturer test certificates, origin documentation, and standard commercial warranties."
+    question: "Are all supplied products backed by manufacturer warranties?",
+    answer: "Yes. All engineering equipment and materials are accompanied by authentic test certificates, origin documentation, and standard commercial warranties."
   },
   {
     id: "br-faq-2",
-    question: "Can Denali provide manufacturer technical submittals for consultant approval?",
+    question: "Can Denali provide technical submittals for consultant approval?",
     answer: "Yes. We prepare complete technical submittal packages including performance curves, material compliance sheets, CAD/BIM dimensional drawings, and third-party laboratory test certificates for consultant evaluation."
   },
   {
     id: "br-faq-3",
-    question: "What if a specific model from a partner brand is not listed on the website?",
-    answer: "Our published catalogue reflects core commercial selections. Our global procurement team can source any specialized equipment or replacement spare part within our partner manufacturers' extended global portfolio upon request."
+    question: "What if a specific model or equipment specification is not listed on the website?",
+    answer: "Our published catalogue reflects core commercial selections. Our global procurement team can source specialized equipment or custom engineering configurations to meet your project specifications upon request."
   }
 ];
 

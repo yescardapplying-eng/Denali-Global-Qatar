@@ -34,7 +34,7 @@ export default function HomePage() {
       <FAQAccordion
         items={homepageFaqs.slice(0, 4)}
         title="Frequently Asked Questions"
-        subtitle="Key insights into Denali Global's product portfolio, brand associations, and technical services."
+        subtitle="Key insights into Denali Global's product portfolio, engineering equipment, and technical services."
         badge="Direct Inquiries"
       />
 

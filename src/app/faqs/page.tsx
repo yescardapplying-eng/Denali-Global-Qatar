@@ -6,7 +6,7 @@ import {
   homepageFaqs,
   servicesFaqs,
   technicalServicesFaqs,
-  brandsFaqs,
+  complianceFaqs,
   productsFaqs,
   aboutFaqs,
   contactFaqs,
@@ -56,10 +56,10 @@ export default function FaqsPage() {
       items: productsFaqs
     },
     {
-      name: "International Brands",
-      badge: "Manufacturers",
+      name: "Quality & Compliance",
+      badge: "Standards",
       icon: Globe2,
-      items: brandsFaqs
+      items: complianceFaqs
     },
     {
       name: "Engineering Solutions",

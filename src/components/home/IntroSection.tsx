@@ -8,7 +8,7 @@ export default function IntroSection() {
     {
       icon: Building2,
       title: "Engineered Product Portfolio",
-      desc: "Delivering international brand products across HVAC, ventilation, hydronics, plumbing, and fire safety."
+      desc: "Delivering certified engineering equipment across HVAC, ventilation, hydronics, plumbing, and fire safety."
     },
     {
       icon: Wrench,

@@ -33,13 +33,13 @@ const slides: HeroSlide[] = [
   },
   {
     id: 2,
-    badge: "Products & Global Brands",
-    headline: "Quality Products. Trusted Global Brands.",
-    description: "Discover reliable engineering products and equipment sourced from established international manufacturers across Europe, the USA, and Asia.",
+    badge: "Engineered Products & Equipment",
+    headline: "Quality Products. Engineering Rigor.",
+    description: "Discover reliable engineering products and MEP equipment designed for Qatar's demanding commercial, industrial, and infrastructure projects.",
     ctaText: "View Products",
     ctaLink: "/products",
-    secondaryCtaText: "View Brands",
-    secondaryCtaLink: "/brands",
+    secondaryCtaText: "Request Quote",
+    secondaryCtaLink: "/contact",
     image: "/hero/hero-slide-2.jpg",
     imageAlt: "Commercial MEP equipment, industrial valves, pumps, and ventilation products"
   },

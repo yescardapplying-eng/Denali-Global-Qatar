@@ -8,7 +8,6 @@ export interface SolutionCard {
   iconName: string;
   link: string;
   features: string[];
-  keyBrands: string[];
 }
 
 export const solutionsData: SolutionCard[] = [
@@ -21,8 +20,7 @@ export const solutionsData: SolutionCard[] = [
     image: "/services/solution-hvac.jpg",
     iconName: "ThermometerSnowflake",
     link: "/services#hvac",
-    features: ["Variable Refrigerant Flow (VRF)", "Eurovent Certified AHUs", "Cleanroom Close Control", "High-Ambient Compressors"],
-    keyBrands: ["Rheem", "Clima Uno", "DOGU", "Tecnair", "Emerson"]
+    features: ["Variable Refrigerant Flow (VRF)", "Eurovent Certified AHUs", "Cleanroom Close Control", "High-Ambient Compressors"]
   },
   {
     id: "mep-solutions",
@@ -33,8 +31,7 @@ export const solutionsData: SolutionCard[] = [
     image: "/services/solution-mep.jpg",
     iconName: "Cpu",
     link: "/services#mep",
-    features: ["Coordinated Engineering Packages", "BMS Sensors & Controls", "Modular Metal Framing", "Civil Defense Approved"],
-    keyBrands: ["STRUT", "Landis+Gyr", "AXIO Annicom", "Weicco"]
+    features: ["Coordinated Engineering Packages", "BMS Sensors & Controls", "Modular Metal Framing", "Civil Defense Approved"]
   },
   {
     id: "ventilation-systems",
@@ -45,8 +42,7 @@ export const solutionsData: SolutionCard[] = [
     image: "/services/solution-ventilation.jpg",
     iconName: "Wind",
     link: "/services#ventilation",
-    features: ["Car Park Jet Fans", "Smoke Spill 400°C/2h Rated", "Acoustic Inline Blowers", "VAV Air Terminal Units"],
-    keyBrands: ["Soler & Palau (S&P)", "Barcol-Air"]
+    features: ["Car Park Jet Fans", "Smoke Spill 400°C/2h Rated", "Acoustic Inline Blowers", "VAV Air Terminal Units"]
   },
   {
     id: "hydronic-solutions",
@@ -57,8 +53,7 @@ export const solutionsData: SolutionCard[] = [
     image: "/services/solution-hydronic.jpg",
     iconName: "Droplets",
     link: "/services#hydronic",
-    features: ["Dynamic PICV Valves", "Gasketed Plate Heat Exchangers", "Expansion Joints & Couplings", "Commissioning Valves"],
-    keyBrands: ["Frese", "Hattersley", "Alfa Laval", "Weicco", "RBM"]
+    features: ["Dynamic PICV Valves", "Gasketed Plate Heat Exchangers", "Expansion Joints & Couplings", "Commissioning Valves"]
   },
   {
     id: "plumbing-solutions",
@@ -69,8 +64,7 @@ export const solutionsData: SolutionCard[] = [
     image: "/services/solution-plumbing.jpg",
     iconName: "Pipette",
     link: "/services#plumbing",
-    features: ["BS EN 1057 Kitemark Copper", "Precision Brass Fittings", "Direct-Acting PR Valves", "Hygienic Storage Tanks"],
-    keyBrands: ["Mueller Industries", "Wednesbury", "Flowflex", "CSA", "Alpak"]
+    features: ["BS EN 1057 Kitemark Copper", "Precision Brass Fittings", "Direct-Acting PR Valves", "Hygienic Storage Tanks"]
   },
   {
     id: "fire-protection",
@@ -81,8 +75,7 @@ export const solutionsData: SolutionCard[] = [
     image: "/services/solution-fire.jpg",
     iconName: "Flame",
     link: "/services#fire",
-    features: ["UL Listed / FM Approved", "Packaged Fire Pump Skids", "Clean Agent Suppression", "Sprinkler & Alarm Valves"],
-    keyBrands: ["Reliable", "Patterson", "NewAge", "Eurofeu", "SIEX", "Ayvaz"]
+    features: ["UL Listed / FM Approved", "Packaged Fire Pump Skids", "Clean Agent Suppression", "Sprinkler & Alarm Valves"]
   },
   {
     id: "engineering-products",
@@ -93,8 +86,7 @@ export const solutionsData: SolutionCard[] = [
     image: "/services/solution-engineering.jpg",
     iconName: "Gauge",
     link: "/services#engineering",
-    features: ["Ultrasonic BTU Metering", "Stainless Pressure Gauges", "Spring Vibration Isolators", "Seismic Strut Framing"],
-    keyBrands: ["Winters Instruments", "Landis+Gyr", "AXIO Annicom", "STRUT", "DEWALT"]
+    features: ["Ultrasonic BTU Metering", "Stainless Pressure Gauges", "Spring Vibration Isolators", "Seismic Strut Framing"]
   },
   {
     id: "technical-services",
@@ -105,8 +97,7 @@ export const solutionsData: SolutionCard[] = [
     image: "/services/solution-technical.jpg",
     iconName: "Wrench",
     link: "/technical-services",
-    features: ["24/7 AMC Preventive Maintenance", "Chiller & AHU Replacement", "Energy Retrofit Upgrades", "Testing, Adjusting & Balancing (TAB)"],
-    keyBrands: ["Denali Technical Services"]
+    features: ["24/7 AMC Preventive Maintenance", "Chiller & AHU Replacement", "Energy Retrofit Upgrades", "Testing, Adjusting & Balancing (TAB)"]
   }
 ];
 

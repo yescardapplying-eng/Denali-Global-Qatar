@@ -14,7 +14,7 @@ interface FAQAccordionProps {
 export default function FAQAccordion({
   items,
   title = "Frequently Asked Questions",
-  subtitle = "Clear answers regarding our product sourcing, engineering services, and international brand partnerships.",
+  subtitle = "Clear answers regarding our product sourcing, engineering capabilities, and technical maintenance services.",
   badge = "Common Inquiries"
 }: FAQAccordionProps) {
   // State for exactly one question open at a time (null if none, index if open)

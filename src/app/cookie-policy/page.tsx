@@ -42,7 +42,7 @@ export default function CookiePolicyPage() {
               The Denali Global website uses strictly technical and functional cookies essential for site navigation:
             </p>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Remembering user filter states across the product and brand directories</li>
+              <li>Remembering user filter states across the product directory</li>
               <li>Ensuring security and preventing CSRF vulnerabilities during enquiry form submissions</li>
               <li>Enhancing responsive rendering and font display performance</li>
             </ul>

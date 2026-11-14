@@ -118,25 +118,8 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
-                  {/* Associated Partner Brands */}
-                  <div className="pt-4 border-t border-[#DCE5EB]">
-                    <span className="text-xs uppercase tracking-wider font-semibold text-[#64748B] block mb-2">
-                      Associated Global Brands:
-                    </span>
-                    <div className="flex flex-wrap gap-2">
-                      {item.keyBrands.map((b, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 rounded bg-[#F5F8FA] border border-[#DCE5EB] text-xs font-semibold text-[#0B2035]"
-                        >
-                          {b}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* CTA: Two Words Max */}
-                  <div className="pt-2 flex items-center gap-4">
+                  <div className="pt-4 flex items-center gap-4">
                     <Link
                       href={`/contact?service=${encodeURIComponent(item.title)}`}
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-md btn-amber text-sm font-semibold tracking-wide"

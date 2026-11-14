@@ -44,19 +44,13 @@ export default function FeaturedProducts() {
               className="bg-white rounded-xl border border-[#DCE5EB] p-5 flex flex-col justify-between denali-card group"
             >
               <div>
-                {/* Manufacturer Logo at Top */}
-                <div className="h-12 w-full flex items-center justify-between pb-3 border-b border-[#DCE5EB]/60">
-                  <div className="relative h-8 w-28">
-                    <Image
-                      src={product.brandLogo}
-                      alt={product.brandName}
-                      fill
-                      sizes="110px"
-                      className="object-contain object-left"
-                    />
-                  </div>
-                  <span className="text-[11px] font-semibold text-[#087E8B] bg-[#087E8B]/10 px-2 py-0.5 rounded">
-                    {product.brandName}
+                {/* Category Badge at Top */}
+                <div className="h-10 w-full flex items-center justify-between pb-3 border-b border-[#DCE5EB]/60">
+                  <span className="text-[11px] font-bold text-[#D8A848] bg-[#002858]/5 px-2.5 py-0.5 rounded uppercase tracking-wider">
+                    {product.category}
+                  </span>
+                  <span className="text-[10px] font-semibold text-[#64748B] uppercase tracking-wider">
+                    Certified MEP
                   </span>
                 </div>
 
@@ -119,16 +113,8 @@ export default function FeaturedProducts() {
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Header with Brand */}
+              {/* Header */}
               <div className="flex items-center gap-4 mb-6 pb-4 border-b border-[#DCE5EB]">
-                <div className="relative h-10 w-32">
-                  <Image
-                    src={selectedProduct.brandLogo}
-                    alt={selectedProduct.brandName}
-                    fill
-                    className="object-contain object-left"
-                  />
-                </div>
                 <div>
                   <span className="text-xs font-bold text-[#087E8B] uppercase tracking-wider block">
                     {selectedProduct.category}

@@ -11,23 +11,17 @@ import { Search, ShieldCheck, ArrowRight, X, Filter } from "lucide-react";
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
-  const [selectedBrand, setSelectedBrand] = useState("All Brands");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-
-  // Extract unique brands present in the product catalogue
-  const uniqueBrands = ["All Brands", ...Array.from(new Set(productsData.map((p) => p.brandName)))];
 
   const filteredProducts = productsData.filter((p) => {
     const matchesCategory =
       selectedCategory === "All Categories" || p.category === selectedCategory;
-    const matchesBrand =
-      selectedBrand === "All Brands" || p.brandName === selectedBrand;
     const matchesSearch =
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.brandName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.category.toLowerCase().includes(searchQuery.toLowerCase());
+      p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (p.shortDescription && p.shortDescription.toLowerCase().includes(searchQuery.toLowerCase()));
 
-    return matchesCategory && matchesBrand && matchesSearch;
+    return matchesCategory && matchesSearch;
   });
 
   return (
@@ -58,13 +52,13 @@ export default function ProductsPage() {
         <div className="bg-white p-6 rounded-2xl border border-[#AFC0D2]/40 mb-10 space-y-5 shadow-xs">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
             {/* Search Bar */}
-            <div className="md:col-span-6 relative">
+            <div className="md:col-span-8 relative">
               <Search className="w-4 h-4 text-[#172B45]/60 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search products by model, equipment type, or specs..."
+                placeholder="Search products by equipment type, model, or technical specs..."
                 className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[#AFC0D2]/50 bg-[#F4F6F9] text-sm text-[#002858] placeholder-[#172B45]/50 focus:outline-none focus:ring-2 focus:ring-[#D8A848] focus:border-[#002858]"
               />
               {searchQuery && (
@@ -78,24 +72,8 @@ export default function ProductsPage() {
               )}
             </div>
 
-            {/* Brand Filter */}
-            <div className="md:col-span-3">
-              <select
-                value={selectedBrand}
-                onChange={(e) => setSelectedBrand(e.target.value)}
-                aria-label="Filter by Brand"
-                className="w-full py-2.5 px-3 rounded-lg border border-[#AFC0D2]/50 bg-[#F4F6F9] text-xs font-semibold text-[#002858] focus:outline-none focus:ring-2 focus:ring-[#D8A848]"
-              >
-                {uniqueBrands.map((brand) => (
-                  <option key={brand} value={brand}>
-                    {brand}
-                  </option>
-                ))}
-              </select>
-            </div>
-
             {/* Product Count Display */}
-            <div className="md:col-span-3 text-right">
+            <div className="md:col-span-4 text-right">
               <span className="text-xs font-bold text-[#002858] bg-[#F4F6F9] px-3.5 py-2 rounded-lg border border-[#AFC0D2]/40 inline-flex items-center gap-1.5">
                 <Filter className="w-3.5 h-3.5 text-[#D8A848]" />
                 {filteredProducts.length} Items Available
@@ -131,19 +109,13 @@ export default function ProductsPage() {
               className="bg-white rounded-2xl border border-slate-200 hover:border-[#D8A848] transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-6 sm:p-7 group cursor-pointer"
             >
               <div>
-                {/* 1. Header: Brand Logo (Left) + Brand Name (Right) */}
-                <div className="h-10 w-full flex items-center justify-between pb-2 border-b border-slate-100">
-                  <div className="relative h-7 w-24">
-                    <Image
-                      src={product.brandLogo}
-                      alt={product.brandName}
-                      fill
-                      sizes="96px"
-                      className="object-contain object-left"
-                    />
-                  </div>
-                  <span className="text-xs font-bold text-[#002858] text-right line-clamp-1 max-w-[55%]">
-                    {product.brandName}
+                {/* 1. Header: Category Badge & Quality Standard */}
+                <div className="h-8 w-full flex items-center justify-between pb-2 border-b border-slate-100">
+                  <span className="text-[11px] font-bold text-[#D8A848] uppercase tracking-wider bg-[#002858]/5 px-2.5 py-0.5 rounded">
+                    {product.category}
+                  </span>
+                  <span className="text-[10px] font-semibold text-[#172B45]/60 uppercase tracking-wider">
+                    Commercial Grade
                   </span>
                 </div>
 
@@ -204,7 +176,6 @@ export default function ProductsPage() {
               onClick={() => {
                 setSearchQuery("");
                 setSelectedCategory("All Categories");
-                setSelectedBrand("All Brands");
               }}
               className="px-5 py-2.5 rounded text-xs font-bold btn-gold"
             >
@@ -234,18 +205,12 @@ export default function ProductsPage() {
             </button>
 
             <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="relative h-8 w-28">
-                  <Image
-                    src={selectedProduct.brandLogo}
-                    alt={selectedProduct.brandName}
-                    fill
-                    sizes="112px"
-                    className="object-contain object-left"
-                  />
-                </div>
-                <span className="text-xs font-bold text-[#D8A848] bg-[#002858] px-2.5 py-1 rounded">
-                  {selectedProduct.brandName}
+              <div className="flex items-center gap-2.5">
+                <span className="text-xs font-bold text-[#D8A848] bg-[#002858] px-3 py-1 rounded">
+                  {selectedProduct.category}
+                </span>
+                <span className="text-xs font-semibold text-[#172B45]/70">
+                  Engineering Portfolio
                 </span>
               </div>
 
