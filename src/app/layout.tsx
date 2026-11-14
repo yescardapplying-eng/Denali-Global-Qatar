@@ -124,17 +124,17 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`scroll-smooth ${montserrat.variable} ${inter.variable}`}>
+    <html lang="en" className={`scroll-smooth overflow-x-hidden max-w-full ${montserrat.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col font-sans antialiased text-[#172B45] bg-white selection:bg-[#D8A848] selection:text-[#002858]">
+      <body className="min-h-screen flex flex-col font-sans antialiased text-[#172B45] bg-white selection:bg-[#D8A848] selection:text-[#002858] overflow-x-hidden max-w-full w-full relative">
         <MouseFollower />
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow overflow-x-hidden w-full max-w-full">{children}</main>
         <Footer />
       </body>
     </html>

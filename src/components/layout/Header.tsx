@@ -84,16 +84,16 @@ export default function Header() {
             : "bg-white border-b border-[#AFC0D2]/40 py-3.5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Main Horizontal Logo (3x11 Ratio) */}
-          <Link href="/" className="flex items-center group relative z-10" aria-label="Denali Global Home">
-            <div className="relative h-12 w-64 sm:h-14 sm:w-72 md:h-16 md:w-80">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-3 w-full">
+          {/* Main Horizontal Logo */}
+          <Link href="/" className="flex items-center min-w-0 flex-shrink group relative z-10" aria-label="Denali Global Home">
+            <div className="relative h-9 w-40 sm:h-12 sm:w-60 md:h-14 md:w-72 lg:h-16 lg:w-80 max-w-[58vw] sm:max-w-none">
               <Image
                 src="/logo/denali-logo-horizontal.png"
                 alt="Denali Global Trading and Contracting"
                 fill
                 priority
-                sizes="(max-width: 640px) 256px, 320px"
+                sizes="(max-width: 640px) 180px, 320px"
                 className="object-contain object-left transition-transform duration-300 group-hover:scale-[1.01]"
               />
             </div>
@@ -135,18 +135,18 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center space-x-3">
+          {/* Mobile Menu & Quote Buttons */}
+          <div className="flex lg:hidden items-center space-x-2 sm:space-x-3 flex-shrink-0">
             <Link
               href="/contact"
-              className="px-3.5 py-1.5 rounded text-xs font-bold btn-primary"
+              className="px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded text-xs font-bold btn-primary whitespace-nowrap"
             >
               Quote
             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md text-[#002858] hover:text-[#D8A848] hover:bg-[#F4F6F9] focus:outline-none"
+              className="p-1.5 sm:p-2 rounded-md text-[#002858] hover:text-[#D8A848] hover:bg-[#F4F6F9] focus:outline-none flex-shrink-0"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? (
@@ -161,7 +161,7 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bottom-0 bg-white z-40 border-t border-slate-200 overflow-y-auto px-6 py-8 flex flex-col justify-between shadow-2xl">
+        <div className="lg:hidden fixed inset-x-0 top-[56px] sm:top-[66px] bottom-0 bg-white z-40 border-t border-slate-200 overflow-y-auto overflow-x-hidden px-5 sm:px-6 py-6 sm:py-8 flex flex-col justify-between shadow-2xl w-full max-w-full">
           <div className="space-y-3">
             <p className="text-xs font-bold text-[#D8A848] uppercase tracking-wider mb-2">
               Menu Navigation

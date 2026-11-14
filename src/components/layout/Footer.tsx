@@ -11,15 +11,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
-          {/* Column 1: Company Profile & Transparent White Logo (No white box) */}
+          {/* Column 1: Company Profile & Transparent White Logo */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-block group" aria-label="Denali Global Home">
-              <div className="relative h-16 w-72 sm:w-80">
+              <div className="relative h-11 w-48 sm:h-14 sm:w-64 md:h-16 md:w-72 max-w-full">
                 <Image
                   src="/logo/denali-logo-white-transparent.png"
                   alt="Denali Global Trading and Contracting"
                   fill
-                  sizes="320px"
+                  sizes="(max-width: 640px) 200px, 320px"
                   className="object-contain object-left drop-shadow-md group-hover:scale-[1.02] transition-transform duration-300"
                 />
               </div>

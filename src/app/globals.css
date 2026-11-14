@@ -34,6 +34,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -41,8 +43,20 @@ body {
   color: var(--text-body);
   font-family: var(--font-body);
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Universal box-sizing and responsive media safety */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {

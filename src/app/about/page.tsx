@@ -101,12 +101,12 @@ export default function AboutPage() {
             {/* Emblem Card with New Official Logo */}
             <div className="lg:col-span-5">
               <div className="p-8 sm:p-10 rounded-2xl bg-gradient-to-br from-[#0B1B32] via-[#002858] to-[#172B45] text-white border border-[#D8A848]/30 shadow-2xl space-y-6 relative overflow-hidden">
-                <div className="relative h-16 w-72">
+                <div className="relative h-12 w-52 sm:h-16 sm:w-72 max-w-full">
                   <Image
                     src="/logo/denali-logo-white-transparent.png"
                     alt="Denali Global Trading and Contracting"
                     fill
-                    sizes="300px"
+                    sizes="(max-width: 640px) 210px, 300px"
                     className="object-contain object-left drop-shadow-md"
                   />
                 </div>
