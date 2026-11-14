@@ -1,14 +1,11 @@
 import React from "react";
-import Link from "next/link";
 import {
   Building2,
-  Factory,
-  Train,
-  ArrowRight
+  Factory
 } from "lucide-react";
 
 export default function IndustryApplications() {
-  // Exactly 3 core sectors featured on homepage
+  // Exactly 2 core sectors featured on homepage as requested
   const sectors = [
     {
       title: "Commercial & Office Towers",
@@ -21,12 +18,6 @@ export default function IndustryApplications() {
       desc: "Manufacturing plants, distribution logistics hubs, and cold storage units demanding durable high-capacity ventilation, heavy-duty ductwork, and QCDD-certified fire skids.",
       icon: Factory,
       equipment: ["Industrial Axial Fans", "Smoke Extract F400", "Dehumidification Units", "NFPA Fire Skids"]
-    },
-    {
-      title: "Infrastructure & Transport Hubs",
-      desc: "Underground metro transit networks, airports, passenger terminals, and road tunnels requiring jet fan thrust ventilation and seismic pipe support systems.",
-      icon: Train,
-      equipment: ["Impulse Jet Fans", "Municipal Hydrants", "Seismic Strut Framing", "Submersible Pumps"]
     }
   ];
 
@@ -47,14 +38,14 @@ export default function IndustryApplications() {
           </p>
         </div>
 
-        {/* 3 Sectors Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* 2 Sectors Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8 sm:gap-10">
           {sectors.map((sec, i) => {
             const Icon = sec.icon;
             return (
               <div
                 key={i}
-                className="bg-white rounded-xl p-7 sm:p-8 border border-[#AFC0D2]/40 hover:border-[#D8A848] transition-all duration-300 denali-card flex flex-col justify-between group shadow-xs"
+                className="bg-white rounded-xl p-8 border border-[#AFC0D2]/40 hover:border-[#D8A848] transition-all duration-300 denali-card flex flex-col justify-between group shadow-sm"
               >
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-xl bg-[#F4F6F9] border border-[#AFC0D2]/30 flex items-center justify-center text-[#002858] group-hover:bg-[#002858] group-hover:text-[#D8A848] transition-all duration-300">
@@ -68,7 +59,7 @@ export default function IndustryApplications() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-5 border-t border-[#AFC0D2]/20">
+                <div className="mt-8 pt-5 border-t border-[#AFC0D2]/20">
                   <span className="text-[11px] font-bold text-[#002858] uppercase tracking-wider block mb-2.5">
                     Engineered Systems:
                   </span>

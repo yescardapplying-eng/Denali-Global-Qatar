@@ -134,9 +134,9 @@ export default function HeroCarousel() {
                   isActive ? "scale-105" : "scale-100"
                 }`}
               />
-              {/* Dual Direction Gradients for Deep Navy Contrast */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#002858]/95 via-[#002858]/80 to-transparent md:to-[#0B1B32]/40" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B32] via-transparent to-transparent opacity-85" />
+              {/* Clean Cinematic Overlay that keeps image vividly visible while ensuring high text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
             </div>
 
             {/* Content Overlay */}
@@ -144,18 +144,18 @@ export default function HeroCarousel() {
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6 animate-fade-in-up">
                   {/* Category Badge with Metallic Gold */}
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#D8A848]/40 text-[#D8A848] text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 border border-[#D8A848]/60 text-[#D8A848] text-xs sm:text-sm font-bold tracking-wide backdrop-blur-md shadow-sm">
                     <ShieldCheck className="w-4 h-4 text-[#D8A848]" />
                     <span>{slide.badge}</span>
                   </div>
 
-                  {/* Responsive Heading */}
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.12] tracking-tight">
+                  {/* Responsive Heading in Pure Bright White */}
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold !text-white leading-[1.14] tracking-tight drop-shadow-lg">
                     {slide.headline}
                   </h1>
 
-                  {/* Description */}
-                  <p className="text-base sm:text-lg md:text-xl text-[#F4F6F9] font-normal leading-relaxed max-w-xl">
+                  {/* Description in Bright High-Contrast Text */}
+                  <p className="text-base sm:text-lg md:text-xl !text-white/95 font-normal leading-relaxed max-w-xl drop-shadow-md">
                     {slide.description}
                   </p>
 

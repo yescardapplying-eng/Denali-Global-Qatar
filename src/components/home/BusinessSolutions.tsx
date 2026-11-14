@@ -48,19 +48,19 @@ export default function BusinessSolutions() {
                 className="group relative bg-white rounded-xl overflow-hidden border border-[#AFC0D2]/40 flex flex-col justify-between denali-card shadow-xs"
               >
                 <div>
-                  {/* Card Image with Hover Zoom */}
-                  <div className="relative h-56 w-full overflow-hidden bg-[#002858] product-img-wrapper cursor-pointer">
+                  {/* Card Image with Hover Zoom - Bright & Vivid */}
+                  <div className="relative h-60 w-full overflow-hidden bg-slate-100 product-img-wrapper cursor-pointer">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-108"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#002858]/85 via-[#002858]/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
                     {/* Floating Icon Badge with Gold Accent */}
-                    <div className="absolute bottom-3 left-4 w-11 h-11 rounded-lg bg-white/95 backdrop-blur-sm shadow-md flex items-center justify-center text-[#002858] group-hover:bg-[#D8A848] group-hover:text-[#002858] transition-all duration-300">
+                    <div className="absolute bottom-3 left-4 w-12 h-12 rounded-lg bg-white shadow-md flex items-center justify-center text-[#002858] group-hover:bg-[#D8A848] group-hover:text-[#002858] transition-all duration-300 border border-[#AFC0D2]/30">
                       <Icon className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
                     </div>
                   </div>

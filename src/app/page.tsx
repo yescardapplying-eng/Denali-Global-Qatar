@@ -30,9 +30,9 @@ export default function HomePage() {
       {/* 6. TARGET APPLICATION SECTORS (TOP 3 SECTORS) */}
       <IndustryApplications />
 
-      {/* 7. HOMEPAGE FAQS */}
+      {/* 7. HOMEPAGE FAQS (EXACTLY 4 FAQS AS REQUESTED) */}
       <FAQAccordion
-        items={homepageFaqs}
+        items={homepageFaqs.slice(0, 4)}
         title="Frequently Asked Questions"
         subtitle="Key insights into Denali Global's product portfolio, brand associations, and technical services."
         badge="Direct Inquiries"

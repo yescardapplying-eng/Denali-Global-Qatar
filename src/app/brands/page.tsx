@@ -26,19 +26,20 @@ export default function BrandsPage() {
   return (
     <div className="w-full">
       {/* Page Hero */}
-      <section className="relative py-24 bg-[#0B2035] text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#36B8B0_1px,transparent_1px)] [background-size:20px_20px]" />
+      <section className="relative py-20 bg-gradient-to-br from-[#0B1B32] via-[#002858] to-[#172B45] text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#D8A848_1px,transparent_1px)] [background-size:24px_24px]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#087E8B]/30 border border-[#36B8B0]/40 text-[#36B8B0] text-xs font-semibold uppercase tracking-wider">
-              <ShieldCheck className="w-4 h-4 text-[#F2A541]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-[#D8A848]/40 text-[#D8A848] text-xs font-bold uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-[#D8A848]" />
               <span>International Manufacturers</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight !text-white">
               Global Brand &amp; Manufacturer Directory
             </h1>
-            <p className="text-lg sm:text-xl text-[#A9B7C3] leading-relaxed font-normal">
-              Explore our portfolio of 35 verified international manufacturers across HVAC systems, ventilation, hydronics, plumbing, and QCDD-approved fire fighting equipment.
+            <div className="w-16 h-1 bg-[#D8A848] rounded-full" />
+            <p className="text-base sm:text-lg !text-[#AFC0D2] leading-relaxed font-normal pt-1">
+              Explore our portfolio of 35 verified international manufacturers across HVAC systems, ventilation, hydronics, plumbing, and QCDD-approved fire fighting equipment in Qatar.
             </p>
           </div>
         </div>

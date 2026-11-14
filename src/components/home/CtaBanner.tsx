@@ -17,13 +17,13 @@ export default function CtaBanner() {
             <span>Commercial Project Inquiries</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight !text-white drop-shadow-md">
             Let&apos;s Build Better Engineering Solutions.
           </h2>
 
           <div className="w-16 h-1 bg-[#D8A848] mx-auto rounded-full" />
 
-          <p className="text-base sm:text-lg text-[#AFC0D2] leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="text-base sm:text-lg !text-white/90 leading-relaxed max-w-2xl mx-auto font-normal">
             Connect with Denali Global to discuss your product requirements, equipment schedules, and engineering enquiries. Our technical team is ready to assist.
           </p>
 

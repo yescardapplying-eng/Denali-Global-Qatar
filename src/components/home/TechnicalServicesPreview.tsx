@@ -52,7 +52,7 @@ export default function TechnicalServicesPreview() {
               <ShieldCheck className="w-4 h-4 text-[#D8A848]" />
               <span>{companyData.serviceDivision}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight !text-white">
               Performance Beyond Installation
             </h2>
             <div className="w-16 h-1 bg-[#D8A848] rounded-full" />
@@ -78,21 +78,21 @@ export default function TechnicalServicesPreview() {
             return (
               <div
                 key={srv.id}
-                className="bg-[#172B45] rounded-xl overflow-hidden border border-[#AFC0D2]/20 hover:border-[#D8A848] transition-all duration-300 flex flex-col justify-between group denali-card shadow-lg"
+                className="bg-[#172B45] rounded-xl overflow-hidden border border-[#AFC0D2]/25 hover:border-[#D8A848] transition-all duration-300 flex flex-col justify-between group denali-card shadow-lg"
               >
                 <div>
-                  {/* Card Image */}
-                  <div className="relative h-60 w-full overflow-hidden bg-[#002858] product-img-wrapper cursor-pointer">
+                  {/* Card Image - Clear visibility without heavy wash */}
+                  <div className="relative h-64 w-full overflow-hidden bg-black product-img-wrapper cursor-pointer">
                     <Image
                       src={srv.image}
                       alt={srv.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-108"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#172B45] via-[#172B45]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded bg-[#002858]/90 backdrop-blur-sm border border-[#D8A848]/40 text-xs font-bold text-[#D8A848]">
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded bg-black/80 backdrop-blur-md border border-[#D8A848]/50 text-xs font-bold text-[#D8A848] shadow-md">
                       {srv.badge}
                     </div>
                   </div>
@@ -100,10 +100,10 @@ export default function TechnicalServicesPreview() {
                   {/* Card Body */}
                   <div className="p-6 sm:p-7 space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-[#002858] flex items-center justify-center text-[#D8A848] flex-shrink-0 border border-[#D8A848]/30">
+                      <div className="w-10 h-10 rounded-lg bg-[#002858] flex items-center justify-center text-[#D8A848] flex-shrink-0 border border-[#D8A848]/40 shadow-xs">
                         <Icon className="w-5 h-5 text-[#D8A848]" />
                       </div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-[#D8A848] transition-colors">
+                      <h3 className="text-xl font-bold !text-white group-hover:!text-[#D8A848] transition-colors">
                         {srv.title}
                       </h3>
                     </div>

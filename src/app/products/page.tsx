@@ -25,7 +25,7 @@ export default function ProductsPage() {
     const matchesSearch =
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.brandName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.shortDescription.toLowerCase().includes(searchQuery.toLowerCase());
+      p.category.toLowerCase().includes(searchQuery.toLowerCase());
 
     return matchesCategory && matchesBrand && matchesSearch;
   });
@@ -41,11 +41,11 @@ export default function ProductsPage() {
               <ShieldCheck className="w-4 h-4 text-[#D8A848]" />
               <span>Commercial Product Portfolio</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight !text-white">
               Engineering Products &amp; Equipment
             </h1>
             <div className="w-16 h-1 bg-[#D8A848] rounded-full" />
-            <p className="text-base sm:text-lg text-[#AFC0D2] leading-relaxed font-normal pt-1">
+            <p className="text-base sm:text-lg !text-[#AFC0D2] leading-relaxed font-normal pt-1">
               Structured catalogue spanning commercial HVAC, ventilation, hydronics, fire suppression, and precision MEP instrumentation across Qatar.
             </p>
           </div>
@@ -122,17 +122,18 @@ export default function ProductsPage() {
           </div>
         </div>
 
-        {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Product Cards Grid: High-Impact Competitor Style (Large Photos, No Short Desc) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-xl border border-[#AFC0D2]/40 p-5 flex flex-col justify-between denali-card group shadow-xs hover:border-[#D8A848] transition-all"
+              onClick={() => setSelectedProduct(product)}
+              className="bg-white rounded-2xl border border-slate-200 hover:border-[#D8A848] transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-6 sm:p-7 group cursor-pointer"
             >
               <div>
-                {/* Manufacturer Logo at Top */}
-                <div className="h-10 w-full flex items-center justify-between pb-2 border-b border-[#AFC0D2]/30">
-                  <div className="relative h-6 w-24">
+                {/* 1. Header: Brand Logo (Left) + Brand Name (Right) */}
+                <div className="h-10 w-full flex items-center justify-between pb-2 border-b border-slate-100">
+                  <div className="relative h-7 w-24">
                     <Image
                       src={product.brandLogo}
                       alt={product.brandName}
@@ -141,51 +142,53 @@ export default function ProductsPage() {
                       className="object-contain object-left"
                     />
                   </div>
-                  <span className="text-[11px] font-bold text-[#002858] bg-[#F4F6F9] px-2 py-0.5 rounded border border-[#AFC0D2]/30">
+                  <span className="text-xs font-bold text-[#002858] text-right line-clamp-1 max-w-[55%]">
                     {product.brandName}
                   </span>
                 </div>
 
-                {/* Central Product Image Area with Hover Zoom */}
-                <div className="relative h-48 w-full my-4 rounded-lg bg-[#F4F6F9] flex items-center justify-center p-3 overflow-hidden border border-[#AFC0D2]/30 product-img-wrapper cursor-pointer">
+                {/* 2. Product Name (Bold, Clear Title) */}
+                <h3 className="text-base sm:text-lg font-bold text-[#002858] group-hover:text-[#D8A848] transition-colors leading-snug line-clamp-2 min-h-[3rem] mt-3">
+                  {product.name}
+                </h3>
+
+                {/* 3. Central Large Product Image (High Visibility, Occupies Card Space) */}
+                <div className="relative h-60 sm:h-64 w-full my-3 flex items-center justify-center overflow-hidden bg-white">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-contain p-2 transition-transform duration-500 group-hover:scale-108"
+                    className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
-
-                {/* Product Meta */}
-                <div className="space-y-1.5">
-                  <span className="text-[11px] font-bold text-[#D8A848] uppercase tracking-wider block">
-                    {product.category}
-                  </span>
-                  <h3 className="text-base font-bold text-[#002858] group-hover:text-[#D8A848] transition-colors leading-snug line-clamp-2">
-                    {product.name}
-                  </h3>
-                  <p className="text-xs text-[#172B45] leading-relaxed line-clamp-2">
-                    {product.shortDescription}
-                  </p>
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="pt-4 mt-4 border-t border-[#AFC0D2]/20 flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setSelectedProduct(product)}
-                  className="flex-1 py-2 px-3 rounded text-xs font-bold bg-[#F4F6F9] hover:bg-[#AFC0D2]/30 text-[#002858] border border-[#AFC0D2]/40 transition-colors"
-                >
-                  View Details
-                </button>
-                <Link
-                  href={`/contact?product=${encodeURIComponent(product.name)}`}
-                  className="py-2 px-3 rounded text-xs font-bold btn-gold"
-                >
-                  Enquire Now
-                </Link>
+              {/* 4. Bottom Category Label & Action Bar */}
+              <div className="pt-3 border-t border-slate-100 space-y-3">
+                <span className="text-[11px] font-extrabold text-[#D8A848] uppercase tracking-wider block text-center">
+                  {product.category}
+                </span>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedProduct(product);
+                    }}
+                    className="flex-1 py-2 px-3 rounded-md text-xs font-bold bg-[#F4F6F9] hover:bg-[#AFC0D2]/30 text-[#002858] border border-slate-200 transition-colors text-center"
+                  >
+                    View Details
+                  </button>
+                  <Link
+                    href={`/contact?product=${encodeURIComponent(product.name)}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="py-2 px-3 rounded-md text-xs font-bold btn-gold text-center"
+                  >
+                    Enquire Now
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
@@ -213,8 +216,14 @@ export default function ProductsPage() {
 
       {/* Product Details Modal */}
       {selectedProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B1B32]/75 backdrop-blur-xs animate-fadeIn">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-[#AFC0D2]/30">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-xs animate-fadeIn"
+          onClick={() => setSelectedProduct(null)}
+        >
+          <div 
+            className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-slate-200"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               type="button"
               onClick={() => setSelectedProduct(null)}
@@ -240,13 +249,13 @@ export default function ProductsPage() {
                 </span>
               </div>
 
-              <div className="relative h-64 w-full bg-[#F4F6F9] rounded-xl flex items-center justify-center p-4 border border-[#AFC0D2]/30">
+              <div className="relative h-72 w-full bg-white rounded-xl flex items-center justify-center p-4 border border-slate-100">
                 <Image
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
                   fill
                   sizes="400px"
-                  className="object-contain p-4"
+                  className="object-contain p-2"
                 />
               </div>
 
