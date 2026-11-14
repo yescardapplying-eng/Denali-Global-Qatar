@@ -2,147 +2,121 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { companyData } from "@/data/company";
-import { ArrowRight, CheckCircle2, ShieldCheck, Wrench, RefreshCw, SlidersHorizontal, Activity } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, RefreshCw, Activity } from "lucide-react";
 
 export default function TechnicalServicesPreview() {
+  // Only 2 key technical services featured on homepage as requested
   const technicalServices = [
     {
       id: "amc",
-      title: "Annual Maintenance Contract",
-      badge: "Comprehensive AMC",
-      desc: "Preventive and breakdown maintenance for split ACs, ducted units, package systems, ventilation, and chiller circuits.",
+      title: "Annual Maintenance Contract (AMC)",
+      badge: "Comprehensive Preventive Care",
+      desc: "Comprehensive preventive and corrective maintenance for split ACs, ducted units, package systems, ventilation fans, and central chiller circuits across commercial facilities.",
       image: "/services/service-amc.jpg",
       icon: Activity,
       features: [
-        "Indoor & outdoor coil cleaning",
-        "Refrigerant pressure checks",
-        "Compressor & fan motor testing",
-        "Control wiring & drainage audits"
+        "Indoor & outdoor coil pressure cleaning",
+        "Refrigerant leak detection & pressure checks",
+        "Compressor & fan motor electrical diagnostics",
+        "Drainage clearance & microbiological treatment"
       ],
       link: "/technical-services#amc"
     },
     {
-      id: "replacement",
-      title: "Equipment Replacement",
-      badge: "Upgrade & Overhaul",
-      desc: "Precision engineering assessments and systematic replacement of aging chillers, AHUs, compressors, and condenser coils.",
-      image: "/services/service-replacement.jpg",
+      id: "tab",
+      title: "Testing, Adjusting & Balancing (TAB)",
+      badge: "Independent Certified Commissioning",
+      desc: "Independent certified air and hydronic water balancing, SMACNA duct leakage verification, indoor air quality (IAQ) testing, and acoustic vibration calibrations for new and existing projects.",
+      image: "/services/service-tab.jpg",
       icon: RefreshCw,
       features: [
-        "Condition & efficiency assessment",
-        "Compressor & coil replacement",
-        "Rigging & crane lift execution",
-        "Seamless restart & validation"
-      ],
-      link: "/technical-services#replacement"
-    },
-    {
-      id: "retrofit",
-      title: "HVAC Retrofit Solutions",
-      badge: "Energy Optimization",
-      desc: "Modernizing existing mechanical infrastructure with variable frequency drives, EC plug fans, and energy management.",
-      image: "/services/service-retrofit.jpg",
-      icon: Wrench,
-      features: [
-        "Lifecycle energy assessments",
-        "R-410A compatibility checks",
-        "Compressor protection upgrades",
-        "Operating cost reduction"
-      ],
-      link: "/technical-services#retrofit"
-    },
-    {
-      id: "tab",
-      title: "Testing, Adjusting & Balancing",
-      badge: "TAB Commissioning",
-      desc: "Independent certified air and water balancing, duct leakage testing, IAQ analysis, and acoustic vibration diagnostics.",
-      image: "/services/service-tab.jpg",
-      icon: SlidersHorizontal,
-      features: [
-        "Air & hydronic water balancing",
-        "Duct leakage testing (SMACNA)",
-        "Indoor air quality (IAQ) analysis",
-        "Sound & vibration calibration"
+        "Hydronic water & air distribution balancing",
+        "SMACNA certified duct leakage rate testing",
+        "Comprehensive Indoor Air Quality (IAQ) audits",
+        "Vibration analysis & acoustic baseline calibration"
       ],
       link: "/technical-services#tab"
     }
   ];
 
   return (
-    <section className="py-24 bg-[#0B2035] text-white relative overflow-hidden">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#36B8B0_1px,transparent_1px)] [background-size:24px_24px]" />
+    <section className="py-20 sm:py-24 bg-[#0B1B32] text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#D8A848_1px,transparent_1px)] [background-size:24px_24px]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#087E8B]/30 border border-[#36B8B0]/30 text-[#36B8B0] text-xs font-semibold uppercase tracking-wider">
-              <ShieldCheck className="w-4 h-4 text-[#F2A541]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002858] border border-[#D8A848]/30 text-[#D8A848] text-xs font-bold uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-[#D8A848]" />
               <span>{companyData.serviceDivision}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
               Performance Beyond Installation
             </h2>
-            <p className="text-[#A9B7C3] text-base leading-relaxed">
-              Specialized technical maintenance and independent engineering commissioning supporting building longevity, energy efficiency, and tenant comfort across Qatar.
+            <div className="w-16 h-1 bg-[#D8A848] rounded-full" />
+            <p className="text-[#AFC0D2] text-base leading-relaxed pt-1">
+              Specialized technical maintenance and certified engineering commissioning supporting building longevity, peak energy efficiency, and tenant comfort across Qatar.
             </p>
           </div>
 
           <Link
             href="/technical-services"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md btn-amber text-sm font-semibold tracking-wide self-start md:self-auto flex-shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md btn-gold text-sm font-bold tracking-wide self-start md:self-auto flex-shrink-0"
           >
-            <span>View Services</span>
+            <span>Our Services</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* 4 Technical Service Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        {/* 2 Featured Technical Service Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8 sm:gap-10">
           {technicalServices.map((srv) => {
             const Icon = srv.icon;
 
             return (
               <div
                 key={srv.id}
-                className="bg-[#102D46] rounded-xl overflow-hidden border border-[#1F4965] hover:border-[#36B8B0] transition-all duration-300 flex flex-col justify-between group"
+                className="bg-[#172B45] rounded-xl overflow-hidden border border-[#AFC0D2]/20 hover:border-[#D8A848] transition-all duration-300 flex flex-col justify-between group denali-card shadow-lg"
               >
                 <div>
                   {/* Card Image */}
-                  <div className="relative h-48 w-full overflow-hidden bg-[#0B2035]">
+                  <div className="relative h-60 w-full overflow-hidden bg-[#002858] product-img-wrapper cursor-pointer">
                     <Image
                       src={srv.image}
                       alt={srv.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-108"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#102D46] via-[#102D46]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#172B45] via-[#172B45]/40 to-transparent" />
 
-                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded bg-[#0B2035]/80 backdrop-blur-sm border border-white/10 text-[11px] font-semibold text-[#F2A541]">
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded bg-[#002858]/90 backdrop-blur-sm border border-[#D8A848]/40 text-xs font-bold text-[#D8A848]">
                       {srv.badge}
                     </div>
                   </div>
 
                   {/* Card Body */}
-                  <div className="p-5 sm:p-6 space-y-3">
-                    <div className="flex items-center gap-2 text-[#36B8B0]">
-                      <Icon className="w-5 h-5 text-[#F2A541]" />
-                      <h3 className="text-lg font-bold text-white group-hover:text-[#36B8B0] transition-colors">
+                  <div className="p-6 sm:p-7 space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-[#002858] flex items-center justify-center text-[#D8A848] flex-shrink-0 border border-[#D8A848]/30">
+                        <Icon className="w-5 h-5 text-[#D8A848]" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white group-hover:text-[#D8A848] transition-colors">
                         {srv.title}
                       </h3>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-[#A9B7C3] leading-relaxed">
+                    <p className="text-sm text-[#AFC0D2] leading-relaxed">
                       {srv.desc}
                     </p>
 
-                    <div className="pt-2 space-y-1.5 border-t border-[#1F4965]/80">
+                    <div className="pt-3 space-y-2 border-t border-[#AFC0D2]/15">
                       {srv.features.map((feat, i) => (
-                        <div key={i} className="flex items-center gap-2 text-xs text-[#E9EFF3]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#36B8B0] flex-shrink-0" />
-                          <span className="line-clamp-1">{feat}</span>
+                        <div key={i} className="flex items-start gap-2.5 text-xs text-white">
+                          <CheckCircle2 className="w-4 h-4 text-[#D8A848] flex-shrink-0 mt-0.5" />
+                          <span className="leading-snug">{feat}</span>
                         </div>
                       ))}
                     </div>
@@ -150,12 +124,12 @@ export default function TechnicalServicesPreview() {
                 </div>
 
                 {/* Card Action Link */}
-                <div className="p-5 sm:p-6 pt-0 mt-auto">
+                <div className="p-6 sm:p-7 pt-0 mt-auto">
                   <Link
                     href={srv.link}
-                    className="inline-flex items-center text-xs font-semibold text-[#F2A541] hover:text-[#FFD18A] transition-colors gap-1 pt-3 border-t border-[#1F4965] w-full"
+                    className="inline-flex items-center text-xs font-bold text-[#D8A848] hover:text-white transition-colors gap-1.5 pt-4 border-t border-[#AFC0D2]/15 w-full"
                   >
-                    <span>Explore Scope</span>
+                    <span>Explore Scope & Standards</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>
                 </div>
@@ -167,4 +141,3 @@ export default function TechnicalServicesPreview() {
     </section>
   );
 }
-

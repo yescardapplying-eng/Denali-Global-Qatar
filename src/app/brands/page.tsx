@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import CtaBanner from "@/components/home/CtaBanner";
 import { brandsData, brandCategories, Brand } from "@/data/brands";
 import { brandsFaqs } from "@/data/faqs";
 import { Search, ShieldCheck, ArrowRight, X, ExternalLink } from "lucide-react";
@@ -226,9 +225,6 @@ export default function BrandsPage() {
         subtitle="Information regarding product warranties, consultant submittals, and factory coordination."
         badge="Brand Inquiries"
       />
-
-      {/* Final CTA */}
-      <CtaBanner />
     </div>
   );
 }

@@ -22,8 +22,8 @@ const slides: HeroSlide[] = [
   {
     id: 1,
     badge: "HVAC & MEP Engineering",
-    headline: "Engineering Solutions for a Better Tomorrow.",
-    description: "Delivering integrated HVAC, MEP and building engineering solutions through trusted products and technical expertise.",
+    headline: "The Strength Behind Every Structure.",
+    description: "Delivering integrated HVAC, MEP, and building engineering solutions through trusted global products and technical excellence in Qatar.",
     ctaText: "Explore Solutions",
     ctaLink: "/services",
     secondaryCtaText: "Get Quote",
@@ -35,7 +35,7 @@ const slides: HeroSlide[] = [
     id: 2,
     badge: "Products & Global Brands",
     headline: "Quality Products. Trusted Global Brands.",
-    description: "Discover reliable engineering products and equipment sourced from established international manufacturers.",
+    description: "Discover reliable engineering products and equipment sourced from established international manufacturers across Europe, the USA, and Asia.",
     ctaText: "View Products",
     ctaLink: "/products",
     secondaryCtaText: "View Brands",
@@ -47,7 +47,7 @@ const slides: HeroSlide[] = [
     id: 3,
     badge: "Denali Technical Services",
     headline: "Performance Beyond Installation.",
-    description: "Supporting building performance through maintenance, replacement, retrofit, testing and commissioning services.",
+    description: "Supporting building longevity and energy performance through turnkey maintenance, equipment replacement, retrofits, and certified TAB commissioning.",
     ctaText: "Our Services",
     ctaLink: "/technical-services",
     secondaryCtaText: "Request Quote",
@@ -93,10 +93,8 @@ export default function HeroCarousel() {
     if (!touchStartX.current || !touchEndX.current) return;
     const diff = touchStartX.current - touchEndX.current;
     if (diff > 50) {
-      // Swiped left
       nextSlide();
     } else if (diff < -50) {
-      // Swiped right
       prevSlide();
     }
     touchStartX.current = null;
@@ -105,7 +103,7 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative w-full h-[580px] sm:h-[640px] md:h-[700px] lg:h-[760px] overflow-hidden bg-[#0B2035]"
+      className="relative w-full h-[580px] sm:h-[640px] md:h-[700px] lg:h-[760px] overflow-hidden bg-[#002858]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -136,18 +134,18 @@ export default function HeroCarousel() {
                   isActive ? "scale-105" : "scale-100"
                 }`}
               />
-              {/* Dual Direction Gradients for Perfect Contrast & Readability */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0B2035]/95 via-[#0B2035]/75 to-transparent md:to-[#0B2035]/30" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B2035] via-transparent to-transparent opacity-80" />
+              {/* Dual Direction Gradients for Deep Navy Contrast */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#002858]/95 via-[#002858]/80 to-transparent md:to-[#0B1B32]/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B32] via-transparent to-transparent opacity-85" />
             </div>
 
             {/* Content Overlay */}
             <div className="absolute inset-0 z-20 flex items-center">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6">
-                  {/* Category Badge */}
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#087E8B]/20 border border-[#36B8B0]/40 text-[#36B8B0] text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm">
-                    <ShieldCheck className="w-4 h-4 text-[#F2A541]" />
+                <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6 animate-fade-in-up">
+                  {/* Category Badge with Metallic Gold */}
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#D8A848]/40 text-[#D8A848] text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm">
+                    <ShieldCheck className="w-4 h-4 text-[#D8A848]" />
                     <span>{slide.badge}</span>
                   </div>
 
@@ -157,15 +155,15 @@ export default function HeroCarousel() {
                   </h1>
 
                   {/* Description */}
-                  <p className="text-base sm:text-lg md:text-xl text-[#E9EFF3] font-normal leading-relaxed max-w-xl">
+                  <p className="text-base sm:text-lg md:text-xl text-[#F4F6F9] font-normal leading-relaxed max-w-xl">
                     {slide.description}
                   </p>
 
-                  {/* Two-word CTA buttons rule */}
+                  {/* Action Buttons */}
                   <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-4">
                     <Link
                       href={slide.ctaLink}
-                      className="px-6 py-3.5 sm:px-8 sm:py-4 rounded-md btn-amber text-sm sm:text-base font-semibold tracking-wide flex items-center gap-2"
+                      className="px-6 py-3.5 sm:px-8 sm:py-4 rounded-md btn-gold text-sm sm:text-base font-bold tracking-wide flex items-center gap-2"
                     >
                       <span>{slide.ctaText}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -191,7 +189,7 @@ export default function HeroCarousel() {
           type="button"
           onClick={prevSlide}
           aria-label="Previous Slide"
-          className="w-11 h-11 rounded-full bg-[#0B2035]/80 hover:bg-[#087E8B] border border-white/20 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#F2A541]"
+          className="w-11 h-11 rounded-full bg-[#002858]/80 hover:bg-[#D8A848] hover:text-[#002858] border border-white/20 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#D8A848]"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -199,7 +197,7 @@ export default function HeroCarousel() {
           type="button"
           onClick={nextSlide}
           aria-label="Next Slide"
-          className="w-11 h-11 rounded-full bg-[#0B2035]/80 hover:bg-[#087E8B] border border-white/20 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#F2A541]"
+          className="w-11 h-11 rounded-full bg-[#002858]/80 hover:bg-[#D8A848] hover:text-[#002858] border border-white/20 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#D8A848]"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -214,7 +212,7 @@ export default function HeroCarousel() {
             onClick={() => setCurrentSlide(i)}
             aria-label={`Go to Slide ${i + 1}`}
             className={`transition-all duration-300 rounded-full h-2.5 ${
-              i === currentSlide ? "w-8 bg-[#F2A541]" : "w-2.5 bg-white/40 hover:bg-white/70"
+              i === currentSlide ? "w-8 bg-[#D8A848]" : "w-2.5 bg-white/40 hover:bg-white/70"
             }`}
           />
         ))}
@@ -222,4 +220,3 @@ export default function HeroCarousel() {
     </section>
   );
 }
-

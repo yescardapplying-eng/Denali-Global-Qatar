@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import CtaBanner from "@/components/home/CtaBanner";
 import { servicesFaqs } from "@/data/faqs";
 import { solutionsData } from "@/data/solutions";
 import {
@@ -165,9 +164,6 @@ export default function ServicesPage() {
         subtitle="Technical clarifications regarding equipment compatibility, QCDD approvals, and customized submittals."
         badge="Technical Scope"
       />
-
-      {/* Final CTA */}
-      <CtaBanner />
     </div>
   );
 }

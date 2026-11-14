@@ -21,18 +21,14 @@ export interface CompanyInfo {
   mapsUrl: string;
   mapsEmbedQuery: string;
   serviceDivision: string;
-  designer: {
-    name: string;
-    url: string;
-  };
   copyrightYear: number;
 }
 
 export const companyData: CompanyInfo = {
   name: "Denali Global Trading and Contracting",
   shortName: "Denali Global",
-  tagline: "Engineering Solutions for a Better Tomorrow",
-  crNumber: "255619",
+  tagline: "The Strength Behind Every Structure",
+  crNumber: "CR No. XXXXX",
   domain: "https://denaliglobalqatar.com",
   email: "info@denaliglobalqatar.com",
   phone: "+974 (Pending Confirmation)",
@@ -51,10 +47,5 @@ export const companyData: CompanyInfo = {
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Building+No.+20+Street+No.+854+Zone+27+Umm+Ghuwailina+Doha+Qatar",
   mapsEmbedQuery: "Building 20, Street 854, Zone 27, Umm Ghuwailina, Doha, Qatar",
   serviceDivision: "DENALI TECHNICAL SERVICES",
-  designer: {
-    name: "Norweb",
-    url: "https://norweb.in"
-  },
   copyrightYear: 2026
 };
-

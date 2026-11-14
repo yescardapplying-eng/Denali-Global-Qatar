@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import CtaBanner from "@/components/home/CtaBanner";
 import { technicalServicesFaqs } from "@/data/faqs";
 import { companyData } from "@/data/company";
 import {
@@ -407,9 +406,6 @@ export default function TechnicalServicesPage() {
         subtitle="Clarifications regarding AMC coverage, retrofit viability, and NEBB/SMACNA TAB standards."
         badge="Division Inquiries"
       />
-
-      {/* Final CTA */}
-      <CtaBanner />
     </div>
   );
 }

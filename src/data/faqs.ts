@@ -113,7 +113,7 @@ export const aboutFaqs: FAQItem[] = [
   {
     id: "abt-faq-1",
     question: "Where is Denali Global Trading and Contracting based?",
-    answer: "Denali Global is registered in Doha, Qatar under Commercial Registration (CR) No. 255619, with our corporate offices situated in Building No. 20, Umm Ghuwailina Area."
+    answer: "Denali Global is registered in Doha, Qatar under CR No. XXXXX, with our corporate offices situated in Building No. 20, Umm Ghuwailina Area."
   },
   {
     id: "abt-faq-2",

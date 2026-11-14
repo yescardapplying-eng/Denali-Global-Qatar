@@ -5,12 +5,7 @@ import { solutionsData } from "@/data/solutions";
 import {
   ThermometerSnowflake,
   Cpu,
-  Wind,
-  Droplets,
-  Pipette,
   Flame,
-  Gauge,
-  Wrench,
   ArrowRight,
   LucideIcon
 } from "lucide-react";
@@ -18,68 +13,67 @@ import {
 const iconMap: { [key: string]: LucideIcon } = {
   ThermometerSnowflake,
   Cpu,
-  Wind,
-  Droplets,
-  Pipette,
   Flame,
-  Gauge,
-  Wrench
 };
 
 export default function BusinessSolutions() {
+  // Only display the 3 primary core solutions on the homepage
+  const topSolutions = solutionsData.slice(0, 3);
+
   return (
-    <section className="py-24 bg-[#F5F8FA]" id="solutions">
+    <section className="py-20 sm:py-24 bg-[#F4F6F9]" id="solutions">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#087E8B]/10 text-[#087E8B] text-xs font-semibold uppercase tracking-wider">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002858]/10 text-[#002858] text-xs font-bold uppercase tracking-wider">
             <span>Integrated Solutions</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B2035] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#002858] tracking-tight">
             Specialized Business Solutions
           </h2>
-          <p className="text-[#64748B] text-base sm:text-lg leading-relaxed">
-            Delivering comprehensive mechanical, electrical, plumbing, and life safety engineering capabilities across commercial, industrial, and infrastructure developments.
+          <div className="w-16 h-1 bg-[#D8A848] mx-auto rounded-full" />
+          <p className="text-[#172B45] text-base sm:text-lg leading-relaxed pt-1">
+            Delivering comprehensive mechanical, electrical, plumbing, and life safety engineering capabilities across Qatar&apos;s leading commercial and infrastructure developments.
           </p>
         </div>
 
-        {/* 8 Business Solution Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {solutionsData.map((item) => {
+        {/* 3 Primary Solution Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {topSolutions.map((item) => {
             const Icon = iconMap[item.iconName] || Cpu;
 
             return (
               <div
                 key={item.id}
-                className="group relative bg-white rounded-xl overflow-hidden border border-[#DCE5EB] flex flex-col justify-between denali-card"
+                className="group relative bg-white rounded-xl overflow-hidden border border-[#AFC0D2]/40 flex flex-col justify-between denali-card shadow-xs"
               >
                 <div>
-                  {/* Card Image */}
-                  <div className="relative h-48 w-full overflow-hidden bg-[#102D46]">
+                  {/* Card Image with Hover Zoom */}
+                  <div className="relative h-56 w-full overflow-hidden bg-[#002858] product-img-wrapper cursor-pointer">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-108"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B2035]/80 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#002858]/85 via-[#002858]/20 to-transparent" />
 
-                    {/* Floating Icon Badge */}
-                    <div className="absolute bottom-3 left-4 w-10 h-10 rounded-lg bg-white/95 backdrop-blur-sm shadow-md flex items-center justify-center text-[#087E8B] group-hover:bg-[#087E8B] group-hover:text-white transition-all duration-300">
-                      <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                    {/* Floating Icon Badge with Gold Accent */}
+                    <div className="absolute bottom-3 left-4 w-11 h-11 rounded-lg bg-white/95 backdrop-blur-sm shadow-md flex items-center justify-center text-[#002858] group-hover:bg-[#D8A848] group-hover:text-[#002858] transition-all duration-300">
+                      <Icon className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
                     </div>
                   </div>
 
                   {/* Card Body */}
-                  <div className="p-5 sm:p-6 space-y-3">
-                    <span className="text-xs font-semibold text-[#36B8B0] uppercase tracking-wider block">
+                  <div className="p-6 space-y-3">
+                    <span className="text-xs font-bold text-[#D8A848] uppercase tracking-wider block">
                       {item.category}
                     </span>
-                    <h3 className="text-xl font-bold text-[#0B2035] group-hover:text-[#087E8B] transition-colors">
+                    <h3 className="text-xl font-bold text-[#002858] group-hover:text-[#D8A848] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-[#64748B] leading-relaxed line-clamp-3">
+                    <p className="text-sm text-[#172B45] leading-relaxed line-clamp-3">
                       {item.shortDescription}
                     </p>
 
@@ -88,7 +82,7 @@ export default function BusinessSolutions() {
                       {item.keyBrands.slice(0, 3).map((brand, i) => (
                         <span
                           key={i}
-                          className="text-[11px] font-medium px-2 py-0.5 rounded bg-[#F5F8FA] border border-[#DCE5EB] text-[#1F4965]"
+                          className="text-[11px] font-semibold px-2 py-0.5 rounded bg-[#F4F6F9] border border-[#AFC0D2]/50 text-[#002858]"
                         >
                           {brand}
                         </span>
@@ -98,13 +92,20 @@ export default function BusinessSolutions() {
                 </div>
 
                 {/* Card Action Link */}
-                <div className="p-5 sm:p-6 pt-0 mt-auto">
+                <div className="p-6 pt-0 border-t border-slate-100 mt-4 flex items-center justify-between">
                   <Link
-                    href={item.link}
-                    className="inline-flex items-center text-sm font-semibold text-[#087E8B] group-hover:text-[#0B2035] transition-colors gap-1.5 pt-3 border-t border-[#DCE5EB]/60 w-full"
+                    href={`/services#${item.id}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#002858] group-hover:text-[#D8A848] transition-colors"
                   >
                     <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+
+                  <Link
+                    href={`/contact?service=${encodeURIComponent(item.title)}`}
+                    className="px-3 py-1.5 rounded text-xs font-bold bg-[#002858]/10 text-[#002858] hover:bg-[#D8A848] hover:text-[#002858] transition-colors"
+                  >
+                    Get Quote
                   </Link>
                 </div>
               </div>
@@ -112,11 +113,11 @@ export default function BusinessSolutions() {
           })}
         </div>
 
-        {/* Bottom CTA to Services Page */}
+        {/* Section Bottom CTA Button: Our Services */}
         <div className="mt-14 text-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md btn-navy text-sm font-semibold tracking-wide"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md btn-primary text-sm font-bold tracking-wide"
           >
             <span>Our Services</span>
             <ArrowRight className="w-4 h-4" />
@@ -126,4 +127,3 @@ export default function BusinessSolutions() {
     </section>
   );
 }
-

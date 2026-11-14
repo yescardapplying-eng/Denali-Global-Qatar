@@ -26,6 +26,7 @@ export const footerQuickLinks2: NavItem[] = [
   { name: "Our Products", href: "/products" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
+  { name: "FAQs", href: "/faqs" },
 ];
 
 export const legalLinks: NavItem[] = [
@@ -33,4 +34,3 @@ export const legalLinks: NavItem[] = [
   { name: "Terms & Conditions", href: "/terms-and-conditions" },
   { name: "Cookie Policy", href: "/cookie-policy" },
 ];
-

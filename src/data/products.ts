@@ -21,7 +21,7 @@ export const productsData: Product[] = [
     brandId: "rheem",
     brandName: "Rheem",
     brandLogo: "/brands/rheem.png",
-    image: "/products/rheem-dx.svg",
+    image: "/products/rheem-dx.png",
     shortDescription: "High-efficiency commercial direct expansion (DX) rooftop packages and ducted split systems engineered for high-ambient desert environments up to 52°C.",
     specifications: {
       "Cooling Capacity": "5.0 to 30.0 TR",
@@ -39,7 +39,7 @@ export const productsData: Product[] = [
     brandId: "rheem",
     brandName: "Rheem",
     brandLogo: "/brands/rheem.png",
-    image: "/products/rheem-vrf.svg",
+    image: "/products/rheem-vrf.png",
     shortDescription: "Variable Refrigerant Flow (VRF) outdoor condenser units delivering simultaneous cooling and heating with intelligent inverter technology.",
     specifications: {
       "System Modules": "Up to 96 HP Combined",
@@ -57,7 +57,7 @@ export const productsData: Product[] = [
     brandId: "clima-uno",
     brandName: "Clima Uno",
     brandLogo: "/brands/clima-uno.png",
-    image: "/products/clima-uno-ahu.svg",
+    image: "/products/clima-uno-ahu.png",
     shortDescription: "Eurovent-certified double-skin AHUs with thermal break profiles, plug fans, and high-efficiency chilled water cooling coils.",
     specifications: {
       "Airflow Range": "1,000 to 100,000 m³/h",
@@ -75,7 +75,7 @@ export const productsData: Product[] = [
     brandId: "clima-uno",
     brandName: "Clima Uno",
     brandLogo: "/brands/clima-uno.png",
-    image: "/products/clima-uno-fcu.svg",
+    image: "/products/clima-uno-fcu.png",
     shortDescription: "Concealed ducted and cassette chilled water fan coil units designed for ultra-low noise operation and versatile static pressure.",
     specifications: {
       "Airflow Range": "200 to 3,000 CFM",
@@ -92,7 +92,7 @@ export const productsData: Product[] = [
     brandId: "clima-uno",
     brandName: "Clima Uno",
     brandLogo: "/brands/clima-uno.png",
-    image: "/products/clima-uno-ecology.svg",
+    image: "/products/clima-uno-ecology.png",
     shortDescription: "Multi-stage kitchen exhaust filtration units featuring electrostatic precipitators (ESP), UV-C ozone treatment, and carbon filters.",
     specifications: {
       "Filtration Stages": "Pre-filter + ESP + UV-C + Activated Carbon",
@@ -109,7 +109,7 @@ export const productsData: Product[] = [
     brandId: "clima-uno",
     brandName: "Clima Uno",
     brandLogo: "/brands/clima-uno.png",
-    image: "/products/clima-uno-erv.svg",
+    image: "/products/clima-uno-erv.png",
     shortDescription: "Total heat recovery fresh air units transferring both sensible and latent heat between exhaust and supply air streams.",
     specifications: {
       "Recovery Core": "Enthalpy Plate Heat Exchanger",
@@ -126,7 +126,7 @@ export const productsData: Product[] = [
     brandId: "dogu",
     brandName: "DOGU Four Seasons",
     brandLogo: "/brands/dogu.png",
-    image: "/products/dogu-ahu.svg",
+    image: "/products/dogu-ahu.png",
     shortDescription: "Rugged modular air handling units tailored for Middle East climatic conditions with hygienic internal surfaces.",
     specifications: {
       "Profile Framework": "Extruded Aluminum with Thermal Break",
@@ -143,7 +143,7 @@ export const productsData: Product[] = [
     brandId: "dogu",
     brandName: "DOGU Four Seasons",
     brandLogo: "/brands/dogu.png",
-    image: "/products/dogu-dehumidifier.svg",
+    image: "/products/dogu-dehumidifier.png",
     shortDescription: "Rotary desiccant and mechanical condensation dehumidification systems for humidity-controlled storage and swimming pools.",
     specifications: {
       "Desiccant Rotor": "High-Efficiency Silica Gel Rotor",
@@ -160,7 +160,7 @@ export const productsData: Product[] = [
     brandId: "tecnair",
     brandName: "Tecnair (Panasonic)",
     brandLogo: "/brands/tecnair.png",
-    image: "/products/tecnair-ccu.svg",
+    image: "/products/tecnair-ccu.png",
     shortDescription: "Mission-critical perimeter cooling units engineered for data centers, telecommunication exchanges, and surgical operating suites.",
     specifications: {
       "Sensible Heat Ratio": "SHR > 0.95 to 1.0",
@@ -178,7 +178,7 @@ export const productsData: Product[] = [
     brandId: "emerson",
     brandName: "Emerson Climate Technologies",
     brandLogo: "/brands/emerson.png",
-    image: "/products/emerson-compressor.svg",
+    image: "/products/emerson-compressor.png",
     shortDescription: "Industry-standard Copeland compliant scroll compressors with CoreSense diagnostic electronics for commercial HVAC & refrigeration.",
     specifications: {
       "Displacement Range": "2.0 to 40.0 HP",
@@ -195,7 +195,7 @@ export const productsData: Product[] = [
     brandId: "barcol-air",
     brandName: "Barcol-Air",
     brandLogo: "/brands/barcol-air.png",
-    image: "/products/barcol-air-vav.svg",
+    image: "/products/barcol-air-vav.png",
     shortDescription: "Single-duct, dual-duct, and fan-powered VAV terminal units with electronic airflow sensor rings for zoned thermal comfort.",
     specifications: {
       "Airflow Capacity": "100 to 7,500 m³/h",
@@ -214,7 +214,7 @@ export const productsData: Product[] = [
     brandId: "sp",
     brandName: "Soler & Palau (S&P)",
     brandLogo: "/brands/sp.png",
-    image: "/products/sp-ventilation.svg",
+    image: "/products/sp-ventilation.png",
     shortDescription: "Acoustically insulated inline centrifugal duct fans, roof extractors, and smoke extract fans certified for F400 (400°C/2h).",
     specifications: {
       "Smoke Rating": "F400 (400°C for 120 minutes) EN 12101-3",
@@ -232,7 +232,7 @@ export const productsData: Product[] = [
     brandId: "sp",
     brandName: "Soler & Palau (S&P)",
     brandLogo: "/brands/sp.png",
-    image: "/products/sp-jet-fans.svg",
+    image: "/products/sp-jet-fans.png",
     shortDescription: "Low-profile reversible induction and axial impulse jet fans for underground parking carbon monoxide and smoke management.",
     specifications: {
       "Thrust Output": "20 N to 100 N Thrust Force",
@@ -251,7 +251,7 @@ export const productsData: Product[] = [
     brandId: "weicco",
     brandName: "Weicco",
     brandLogo: "/brands/weicco.png",
-    image: "/products/weicco-expansion.svg",
+    image: "/products/weicco-expansion.png",
     shortDescription: "Stainless steel braided pump connectors, metallic bellows expansion joints, and rubber spool joints for thermal compensation.",
     specifications: {
       "Nominal Diameter": "DN15 to DN1200",
@@ -268,7 +268,7 @@ export const productsData: Product[] = [
     brandId: "weicco",
     brandName: "Weicco",
     brandLogo: "/brands/weicco.png",
-    image: "/products/weicco-vibration.svg",
+    image: "/products/weicco-vibration.png",
     shortDescription: "Enclosed spring mounts, neoprene waffle pads, and seismic restrained vibration isolators for mechanical equipment.",
     specifications: {
       "Static Deflection": "25mm, 50mm, 75mm Deflection",
@@ -285,7 +285,7 @@ export const productsData: Product[] = [
     brandId: "hattersley",
     brandName: "Hattersley",
     brandLogo: "/brands/hattersley.png",
-    image: "/products/hattersley-valves.svg",
+    image: "/products/hattersley-valves.png",
     shortDescription: "British engineered double-regulating balancing valves, variable orifice commissioning sets, and cast bronze gate/globe valves.",
     specifications: {
       "Size Range": "DN15 to DN300 (1/2\" to 12\")",
@@ -302,7 +302,7 @@ export const productsData: Product[] = [
     brandId: "frese",
     brandName: "Frese",
     brandLogo: "/brands/frese.png",
-    image: "/products/frese-picv.svg",
+    image: "/products/frese-picv.png",
     shortDescription: "Dynamic PICV balancing valves combining automatic differential pressure control, flow limiting, and BMS modulation in one body.",
     specifications: {
       "Size Range": "DN15 to DN150",
@@ -320,7 +320,7 @@ export const productsData: Product[] = [
     brandId: "alfa-laval",
     brandName: "Alfa Laval",
     brandLogo: "/brands/alfa-laval.png",
-    image: "/products/alfa-laval-phex.svg",
+    image: "/products/alfa-laval-phex.png",
     shortDescription: "World-class gasketed plate heat exchangers delivering high thermal efficiency for district cooling energy transfer stations (ETS).",
     specifications: {
       "Design Pressure": "Up to 25 / 30 bar Design Rating",
@@ -338,7 +338,7 @@ export const productsData: Product[] = [
     brandId: "mueller-industries",
     brandName: "Mueller Industries",
     brandLogo: "/brands/mueller-industries.png",
-    image: "/products/mueller-copper.svg",
+    image: "/products/mueller-copper.png",
     shortDescription: "ASTM B280 seamless refrigeration copper coils, nitrogen-purged ACR copper tubes, and wrought copper solder joint fittings.",
     specifications: {
       "Standard": "ASTM B280 / ASTM B88 Seamless Copper",
@@ -355,7 +355,7 @@ export const productsData: Product[] = [
     brandId: "wednesbury",
     brandName: "Wednesbury (Mueller Europe)",
     brandLogo: "/brands/wednesbury.png",
-    image: "/products/wednesbury-pipes.svg",
+    image: "/products/wednesbury-pipes.png",
     shortDescription: "British Kitemark approved copper tubing manufactured to BS EN 1057 Table X and Table Y specifications for domestic and medical piping.",
     specifications: {
       "Standards": "BS EN 1057 / BS 2871",
@@ -372,7 +372,7 @@ export const productsData: Product[] = [
     brandId: "flowflex",
     brandName: "Flowflex",
     brandLogo: "/brands/flowflex.png",
-    image: "/products/flowflex-fittings.svg",
+    image: "/products/flowflex-fittings.png",
     shortDescription: "Precision UK manufactured brass compression fittings, end-feed copper fittings, and full-bore plumbing isolation valves.",
     specifications: {
       "Standard": "BS EN 1254-2 Compression Fittings",
@@ -389,7 +389,7 @@ export const productsData: Product[] = [
     brandId: "csa",
     brandName: "CSA",
     brandLogo: "/brands/csa.png",
-    image: "/products/csa-prv.svg",
+    image: "/products/csa-prv.png",
     shortDescription: "Direct-acting water pressure reducing valves and anti-slam air release valves designed to stabilize high-rise plumbing pressures.",
     specifications: {
       "Inlet Pressure": "Up to 25 bar Inflow Pressure",
@@ -406,7 +406,7 @@ export const productsData: Product[] = [
     brandId: "rbm",
     brandName: "RBM",
     brandLogo: "/brands/rbm.png",
-    image: "/products/rbm-prv.svg",
+    image: "/products/rbm-prv.png",
     shortDescription: "Italian engineered piston-type and diaphragm pressure regulating valves with integrated stainless steel filter screens.",
     specifications: {
       "Size Range": "1/2\" to 2\" Threaded BSP",
@@ -423,7 +423,7 @@ export const productsData: Product[] = [
     brandId: "mueller",
     brandName: "Mueller",
     brandLogo: "/brands/mueller.png",
-    image: "/products/mueller-hydrant.svg",
+    image: "/products/mueller-hydrant.png",
     shortDescription: "Heavy-duty AWWA C509/C515 resilient wedge gate valves, indicator posts, and dry barrel municipal fire hydrants.",
     specifications: {
       "Pressure Rating": "250 psi / 350 psi Working Pressure",
@@ -440,7 +440,7 @@ export const productsData: Product[] = [
     brandId: "strut",
     brandName: "STRUT Support Systems",
     brandLogo: "/brands/strut.png",
-    image: "/products/strut-framing.svg",
+    image: "/products/strut-framing.png",
     shortDescription: "Slotted and plain cold-rolled metal framing channels, pipe clamps, cantilever brackets, and seismic bracing accessories.",
     specifications: {
       "Channel Profile": "41x41mm / 41x21mm Unistrut Compatible",
@@ -459,7 +459,7 @@ export const productsData: Product[] = [
     brandId: "alpak",
     brandName: "Alpak",
     brandLogo: "/brands/alpak.png",
-    image: "/products/alpak-solar.svg",
+    image: "/products/alpak-solar.png",
     shortDescription: "European engineered thermosiphonic solar hot water systems and high-capacity ultratanks with selective blue solar absorbers.",
     specifications: {
       "Tank Volume": "150L to 500L Storage Capacities",
@@ -478,7 +478,7 @@ export const productsData: Product[] = [
     brandId: "general-pumps",
     brandName: "General Pumps Spain",
     brandLogo: "/brands/general-pumps.png",
-    image: "/products/general-pumps.svg",
+    image: "/products/general-pumps.png",
     shortDescription: "Spanish end-suction, in-line circulator, and vertical multistage centrifugal pumps for chilled water and domestic booster packages.",
     specifications: {
       "Flow Range": "Up to 1,200 m³/h Flow Rate",
@@ -496,7 +496,7 @@ export const productsData: Product[] = [
     brandId: "winters",
     brandName: "Winters Instruments",
     brandLogo: "/brands/winters.png",
-    image: "/products/winters-gauge.svg",
+    image: "/products/winters-gauge.png",
     shortDescription: "All-stainless steel liquid-filled pressure gauges, bimetal dial thermometers, and brass thermowells for HVAC and industrial piping.",
     specifications: {
       "Dial Sizes": "63mm (2.5\"), 100mm (4\"), 150mm (6\")",
@@ -513,7 +513,7 @@ export const productsData: Product[] = [
     brandId: "landis-gyr",
     brandName: "Landis+Gyr",
     brandLogo: "/brands/landis-gyr.png",
-    image: "/products/landis-btu.svg",
+    image: "/products/landis-btu.png",
     shortDescription: "MID Class 2 approved ultrasonic thermal energy meters for district cooling billing, tenant sub-metering, and energy management.",
     specifications: {
       "Measuring Method": "Ultrasonic Transit-Time Principle (No Moving Parts)",
@@ -530,7 +530,7 @@ export const productsData: Product[] = [
     brandId: "axio-annicom",
     brandName: "AXIO Annicom",
     brandLogo: "/brands/axio-annicom.png",
-    image: "/products/axio-sensors.svg",
+    image: "/products/axio-sensors.png",
     shortDescription: "Electrochemical carbon monoxide sensors, parking garage gas detection panels, and commercial touch-screen room thermostats.",
     specifications: {
       "Sensor Element": "Solid Polymer Electrochemical Cell",
@@ -549,7 +549,7 @@ export const productsData: Product[] = [
     brandId: "patterson",
     brandName: "Patterson Fire Pumps",
     brandLogo: "/brands/patterson.png",
-    image: "/products/patterson-pump.svg",
+    image: "/products/patterson-pump.png",
     shortDescription: "Horizontal split-case, end-suction, and vertical turbine fire pump packages with diesel engine or electric motor drives and UL-listed controllers.",
     specifications: {
       "Flow Capacity": "250 to 5,000 GPM Flow Rates",
@@ -567,7 +567,7 @@ export const productsData: Product[] = [
     brandId: "reliable",
     brandName: "Reliable",
     brandLogo: "/brands/reliable.png",
-    image: "/products/reliable-sprinkler.svg",
+    image: "/products/reliable-sprinkler.png",
     shortDescription: "Standard and quick response pendant, upright, and concealed fire sprinkler heads, wet alarm check valves, and deluge valves.",
     specifications: {
       "K-Factors": "K5.6 (80), K8.0 (115), K11.2, K14.0, K16.8",
@@ -585,7 +585,7 @@ export const productsData: Product[] = [
     brandId: "eurofeu",
     brandName: "Eurofeu",
     brandLogo: "/brands/eurofeu.png",
-    image: "/products/eurofeu-extinguisher.svg",
+    image: "/products/eurofeu-extinguisher.png",
     shortDescription: "European standard portable and mobile dry powder, foam, and CO2 fire extinguishers with heavy-duty corrosion-resistant finish.",
     specifications: {
       "Capacities": "1kg to 12kg Portable / 25kg to 100kg Wheeled Units",
@@ -602,7 +602,7 @@ export const productsData: Product[] = [
     brandId: "newage",
     brandName: "NewAge Group",
     brandLogo: "/brands/newage.png",
-    image: "/products/newage-hose.svg",
+    image: "/products/newage-hose.png",
     shortDescription: "Synthetic rubber lined all-weather percolating and non-percolating fire delivery hoses, multi-purpose jet/spray fog nozzles.",
     specifications: {
       "Working Pressure": "15 bar to 25 bar Working / 45 bar Burst",
@@ -619,7 +619,7 @@ export const productsData: Product[] = [
     brandId: "ayvaz",
     brandName: "Ayvaz",
     brandLogo: "/brands/ayvaz.png",
-    image: "/products/ayvaz-drops.svg",
+    image: "/products/ayvaz-drops.png",
     shortDescription: "Corrugated stainless steel braided flexible sprinkler hose assemblies with ceiling brackets for quick drop ceiling installation.",
     specifications: {
       "Hose Lengths": "700mm, 1000mm, 1200mm, 1500mm, 1800mm",
@@ -636,7 +636,7 @@ export const productsData: Product[] = [
     brandId: "flotek",
     brandName: "Flotex / Flotek",
     brandLogo: "/brands/flotek.png",
-    image: "/products/flotek-cabinet.svg",
+    image: "/products/flotek-cabinet.png",
     shortDescription: "Surface and recessed fire hose reel cabinets manufactured in hairline stainless steel or electro-galvanized red powder coated finish.",
     specifications: {
       "Material": "SS 304 Hairline / SS 316 / 1.5mm Mild Steel",
@@ -653,7 +653,7 @@ export const productsData: Product[] = [
     brandId: "siex",
     brandName: "SIEX Fire Suppression",
     brandLogo: "/brands/siex.png",
-    image: "/products/siex-suppression.svg",
+    image: "/products/siex-suppression.png",
     shortDescription: "Engineered automatic gaseous total flooding systems using FK-5-1-12 (Novec 1230), HFC-227ea (FM-200), and Inergen inert gases.",
     specifications: {
       "Agents": "FK-5-1-12, HFC-227ea, IG-541, IG-55, Carbon Dioxide",
@@ -670,7 +670,7 @@ export const productsData: Product[] = [
     brandId: "wilson-cousins",
     brandName: "Wilson & Cousins",
     brandLogo: "/brands/wilson-cousins.png",
-    image: "/products/wilson-fdc.svg",
+    image: "/products/wilson-fdc.png",
     shortDescription: "Solid cast brass Siamese two-way and four-way fire department connections (FDC) with clappers and polished escutcheons.",
     specifications: {
       "Configuration": "Two-Way 4\" x 2.5\" x 2.5\" Siamese Inlets",
@@ -687,7 +687,7 @@ export const productsData: Product[] = [
     brandId: "lingjack",
     brandName: "Lingjack Fire & Safety",
     brandLogo: "/brands/lingjack.png",
-    image: "/products/lingjack-valves.svg",
+    image: "/products/lingjack-valves.png",
     shortDescription: "Gunmetal and bronze oblique pattern landing valves designed for wet risers and standpipe systems in high-rise buildings.",
     specifications: {
       "Size": "DN65 (2.5\") Flanged PN16 Inlet",
@@ -704,7 +704,7 @@ export const productsData: Product[] = [
     brandId: "ceasefire",
     brandName: "Ceasefire",
     brandLogo: "/brands/ceasefire.png",
-    image: "/products/ceasefire-auto.svg",
+    image: "/products/ceasefire-auto.png",
     shortDescription: "Ceiling-suspended automatic clean agent extinguishing units with thermo-sensitive glass bulb trigger for unmanned equipment spaces.",
     specifications: {
       "Capacities": "2kg, 5kg, 10kg Modular Cylinders",
@@ -723,7 +723,7 @@ export const productsData: Product[] = [
     brandId: "dewalt",
     brandName: "DEWALT",
     brandLogo: "/brands/dewalt.png",
-    image: "/products/dewalt-tools.svg",
+    image: "/products/dewalt-tools.png",
     shortDescription: "Heavy-duty SDS-Max cordless rotary hammers, hydraulic threaded rod cutters, and mechanical concrete anchor fastening systems.",
     specifications: {
       "Platform": "54V XR FLEXVOLT Cordless Platform",

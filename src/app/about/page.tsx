@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import CtaBanner from "@/components/home/CtaBanner";
 import { aboutFaqs } from "@/data/faqs";
 import { companyData } from "@/data/company";
 import {
@@ -179,9 +178,6 @@ export default function AboutPage() {
         subtitle="Common questions regarding our business registration, regional operations, and full-service approach."
         badge="Company Insights"
       />
-
-      {/* Final CTA */}
-      <CtaBanner />
     </div>
   );
 }

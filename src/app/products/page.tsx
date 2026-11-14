@@ -4,9 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import CtaBanner from "@/components/home/CtaBanner";
 import { productsData, productCategories, Product } from "@/data/products";
-import { brandsData } from "@/data/brands";
 import { productsFaqs } from "@/data/faqs";
 import { Search, ShieldCheck, ArrowRight, X, Filter } from "lucide-react";
 
@@ -33,300 +31,304 @@ export default function ProductsPage() {
   });
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#F4F6F9]">
       {/* Page Hero */}
-      <section className="relative py-24 bg-[#0B2035] text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#36B8B0_1px,transparent_1px)] [background-size:20px_20px]" />
+      <section className="relative py-20 bg-gradient-to-br from-[#0B1B32] via-[#002858] to-[#172B45] text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#D8A848_1px,transparent_1px)] [background-size:24px_24px]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#087E8B]/30 border border-[#36B8B0]/40 text-[#36B8B0] text-xs font-semibold uppercase tracking-wider">
-              <ShieldCheck className="w-4 h-4 text-[#F2A541]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-[#D8A848]/40 text-[#D8A848] text-xs font-bold uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-[#D8A848]" />
               <span>Commercial Product Portfolio</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
               Engineering Products &amp; Equipment
             </h1>
-            <p className="text-lg sm:text-xl text-[#A9B7C3] leading-relaxed font-normal">
-              Structured catalogue spanning commercial HVAC, ventilation, hydronics, fire suppression, and precision MEP instrumentation.
+            <div className="w-16 h-1 bg-[#D8A848] rounded-full" />
+            <p className="text-base sm:text-lg text-[#AFC0D2] leading-relaxed font-normal pt-1">
+              Structured catalogue spanning commercial HVAC, ventilation, hydronics, fire suppression, and precision MEP instrumentation across Qatar.
             </p>
           </div>
         </div>
       </section>
 
       {/* Catalogue & Filters Section */}
-      <section className="py-16 bg-white border-b border-[#DCE5EB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Controls Bar: Search & Selectors */}
-          <div className="bg-[#F5F8FA] p-6 rounded-2xl border border-[#DCE5EB] mb-10 space-y-5">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-              {/* Search Bar */}
-              <div className="md:col-span-6 relative">
-                <Search className="w-4 h-4 text-[#64748B] absolute left-3.5 top-1/2 -translate-y-1/2" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search products by model, equipment type, or specs..."
-                  className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[#DCE5EB] bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#087E8B]/30 focus:border-[#087E8B]"
-                />
-                {searchQuery && (
-                  <button
-                    type="button"
-                    onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#64748B] hover:text-[#0B2035]"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                )}
-              </div>
-
-              {/* Brand Dropdown Filter */}
-              <div className="md:col-span-3">
-                <select
-                  value={selectedBrand}
-                  onChange={(e) => setSelectedBrand(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-lg border border-[#DCE5EB] bg-white text-sm text-[#0B2035] focus:outline-none focus:ring-2 focus:ring-[#087E8B]/30"
+      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Controls Bar: Search & Selectors */}
+        <div className="bg-white p-6 rounded-2xl border border-[#AFC0D2]/40 mb-10 space-y-5 shadow-xs">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            {/* Search Bar */}
+            <div className="md:col-span-6 relative">
+              <Search className="w-4 h-4 text-[#172B45]/60 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search products by model, equipment type, or specs..."
+                className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[#AFC0D2]/50 bg-[#F4F6F9] text-sm text-[#002858] placeholder-[#172B45]/50 focus:outline-none focus:ring-2 focus:ring-[#D8A848] focus:border-[#002858]"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#002858] font-bold hover:underline"
                 >
-                  {uniqueBrands.map((b) => (
-                    <option key={b} value={b}>
-                      {b}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Product Count Stats */}
-              <div className="md:col-span-3 text-right">
-                <span className="text-xs font-semibold text-[#64748B]">
-                  Showing <strong className="text-[#0B2035] font-bold">{filteredProducts.length}</strong> Products
-                </span>
-              </div>
+                  <X className="w-4 h-4" />
+                </button>
+              )}
             </div>
 
-            {/* Category Filter Pills */}
-            <div className="pt-2 border-t border-[#DCE5EB]/60 flex items-center flex-wrap gap-2">
-              <span className="text-xs font-bold text-[#102D46] mr-1 flex items-center gap-1">
-                <Filter className="w-3.5 h-3.5 text-[#087E8B]" /> Category:
+            {/* Brand Filter */}
+            <div className="md:col-span-3">
+              <select
+                value={selectedBrand}
+                onChange={(e) => setSelectedBrand(e.target.value)}
+                aria-label="Filter by Brand"
+                className="w-full py-2.5 px-3 rounded-lg border border-[#AFC0D2]/50 bg-[#F4F6F9] text-xs font-semibold text-[#002858] focus:outline-none focus:ring-2 focus:ring-[#D8A848]"
+              >
+                {uniqueBrands.map((brand) => (
+                  <option key={brand} value={brand}>
+                    {brand}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Product Count Display */}
+            <div className="md:col-span-3 text-right">
+              <span className="text-xs font-bold text-[#002858] bg-[#F4F6F9] px-3.5 py-2 rounded-lg border border-[#AFC0D2]/40 inline-flex items-center gap-1.5">
+                <Filter className="w-3.5 h-3.5 text-[#D8A848]" />
+                {filteredProducts.length} Items Available
               </span>
-              {productCategories.map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                    selectedCategory === cat
-                      ? "bg-[#0B2035] text-white shadow-xs"
-                      : "bg-white text-[#102D46] hover:bg-[#E9EFF3] border border-[#DCE5EB]"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
             </div>
           </div>
 
-          {/* Product Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-            {filteredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="bg-white rounded-xl border border-[#DCE5EB] p-5 flex flex-col justify-between denali-card group shadow-xs"
+          {/* Category Tabs */}
+          <div className="flex flex-wrap gap-2 pt-2 border-t border-[#AFC0D2]/20">
+            {productCategories.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+                  selectedCategory === cat
+                    ? "bg-[#002858] text-[#D8A848] shadow-sm border border-[#D8A848]/30"
+                    : "bg-[#F4F6F9] text-[#172B45] hover:bg-[#AFC0D2]/20 border border-[#AFC0D2]/40"
+                }`}
               >
-                <div>
-                  {/* Manufacturer Logo at Top */}
-                  <div className="h-12 w-full flex items-center justify-between pb-3 border-b border-[#DCE5EB]/60">
-                    <div className="relative h-8 w-28">
-                      <Image
-                        src={product.brandLogo}
-                        alt={product.brandName}
-                        fill
-                        sizes="110px"
-                        className="object-contain object-left"
-                      />
-                    </div>
-                    <span className="text-[11px] font-semibold text-[#087E8B] bg-[#087E8B]/10 px-2 py-0.5 rounded">
-                      {product.brandName}
-                    </span>
-                  </div>
-
-                  {/* Central Product Image Area */}
-                  <div className="relative h-48 w-full my-4 rounded-lg bg-[#F8FAFC] flex items-center justify-center p-3 overflow-hidden border border-[#DCE5EB]/40">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-
-                  {/* Product Meta */}
-                  <div className="space-y-2">
-                    <span className="text-[11px] font-semibold text-[#64748B] uppercase tracking-wider block">
-                      {product.category}
-                    </span>
-                    <h3 className="text-base font-bold text-[#0B2035] group-hover:text-[#087E8B] transition-colors leading-snug line-clamp-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-xs text-[#64748B] leading-relaxed line-clamp-3">
-                      {product.shortDescription}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Action Buttons: 2 Words Max */}
-                <div className="pt-4 mt-4 border-t border-[#DCE5EB]/60 flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setSelectedProduct(product)}
-                    className="flex-1 py-2 px-3 rounded text-xs font-semibold bg-[#F5F8FA] hover:bg-[#E9EFF3] text-[#102D46] border border-[#DCE5EB] transition-colors"
-                  >
-                    View Details
-                  </button>
-                  <Link
-                    href={`/contact?product=${encodeURIComponent(product.name)}`}
-                    className="py-2 px-3 rounded text-xs font-semibold btn-amber"
-                  >
-                    Enquire Now
-                  </Link>
-                </div>
-              </div>
+                {cat}
+              </button>
             ))}
           </div>
-
-          {filteredProducts.length === 0 && (
-            <div className="text-center py-20 bg-[#F5F8FA] rounded-2xl border border-dashed border-[#DCE5EB] space-y-3">
-              <p className="text-[#64748B] text-base font-medium">
-                No engineering products match your current filter criteria.
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setSearchQuery("");
-                  setSelectedCategory("All Categories");
-                  setSelectedBrand("All Brands");
-                }}
-                className="px-5 py-2.5 rounded text-xs font-semibold btn-amber"
-              >
-                Reset All Filters
-              </button>
-            </div>
-          )}
         </div>
+
+        {/* Product Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredProducts.map((product) => (
+            <div
+              key={product.id}
+              className="bg-white rounded-xl border border-[#AFC0D2]/40 p-5 flex flex-col justify-between denali-card group shadow-xs hover:border-[#D8A848] transition-all"
+            >
+              <div>
+                {/* Manufacturer Logo at Top */}
+                <div className="h-10 w-full flex items-center justify-between pb-2 border-b border-[#AFC0D2]/30">
+                  <div className="relative h-6 w-24">
+                    <Image
+                      src={product.brandLogo}
+                      alt={product.brandName}
+                      fill
+                      sizes="96px"
+                      className="object-contain object-left"
+                    />
+                  </div>
+                  <span className="text-[11px] font-bold text-[#002858] bg-[#F4F6F9] px-2 py-0.5 rounded border border-[#AFC0D2]/30">
+                    {product.brandName}
+                  </span>
+                </div>
+
+                {/* Central Product Image Area with Hover Zoom */}
+                <div className="relative h-48 w-full my-4 rounded-lg bg-[#F4F6F9] flex items-center justify-center p-3 overflow-hidden border border-[#AFC0D2]/30 product-img-wrapper cursor-pointer">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-contain p-2 transition-transform duration-500 group-hover:scale-108"
+                  />
+                </div>
+
+                {/* Product Meta */}
+                <div className="space-y-1.5">
+                  <span className="text-[11px] font-bold text-[#D8A848] uppercase tracking-wider block">
+                    {product.category}
+                  </span>
+                  <h3 className="text-base font-bold text-[#002858] group-hover:text-[#D8A848] transition-colors leading-snug line-clamp-2">
+                    {product.name}
+                  </h3>
+                  <p className="text-xs text-[#172B45] leading-relaxed line-clamp-2">
+                    {product.shortDescription}
+                  </p>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="pt-4 mt-4 border-t border-[#AFC0D2]/20 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setSelectedProduct(product)}
+                  className="flex-1 py-2 px-3 rounded text-xs font-bold bg-[#F4F6F9] hover:bg-[#AFC0D2]/30 text-[#002858] border border-[#AFC0D2]/40 transition-colors"
+                >
+                  View Details
+                </button>
+                <Link
+                  href={`/contact?product=${encodeURIComponent(product.name)}`}
+                  className="py-2 px-3 rounded text-xs font-bold btn-gold"
+                >
+                  Enquire Now
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {filteredProducts.length === 0 && (
+          <div className="text-center py-20 bg-white rounded-2xl border border-dashed border-[#AFC0D2]/60 space-y-3">
+            <p className="text-[#172B45] text-base font-medium">
+              No engineering products match your current filter criteria.
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery("");
+                setSelectedCategory("All Categories");
+                setSelectedBrand("All Brands");
+              }}
+              className="px-5 py-2.5 rounded text-xs font-bold btn-gold"
+            >
+              Reset All Filters
+            </button>
+          </div>
+        )}
       </section>
 
       {/* Product Details Modal */}
       {selectedProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B2035]/70 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B1B32]/75 backdrop-blur-xs animate-fadeIn">
+          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-[#AFC0D2]/30">
             <button
               type="button"
               onClick={() => setSelectedProduct(null)}
-              className="absolute top-5 right-5 p-2 rounded-full text-[#64748B] hover:text-[#0B2035] hover:bg-[#F5F8FA] transition-colors"
               aria-label="Close modal"
+              className="absolute top-5 right-5 p-2 rounded-full bg-[#F4F6F9] hover:bg-[#AFC0D2]/30 text-[#002858] transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {/* Header */}
-            <div className="flex items-center gap-4 mb-6 pb-4 border-b border-[#DCE5EB]">
-              <div className="relative h-10 w-32">
-                <Image
-                  src={selectedProduct.brandLogo}
-                  alt={selectedProduct.brandName}
-                  fill
-                  className="object-contain object-left"
-                />
-              </div>
-              <div>
-                <span className="text-xs font-bold text-[#087E8B] uppercase tracking-wider block">
-                  {selectedProduct.category}
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="relative h-8 w-28">
+                  <Image
+                    src={selectedProduct.brandLogo}
+                    alt={selectedProduct.brandName}
+                    fill
+                    sizes="112px"
+                    className="object-contain object-left"
+                  />
+                </div>
+                <span className="text-xs font-bold text-[#D8A848] bg-[#002858] px-2.5 py-1 rounded">
+                  {selectedProduct.brandName}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#0B2035]">
-                  {selectedProduct.name}
-                </h3>
               </div>
-            </div>
 
-            {/* Image & Description */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-              <div className="relative h-56 w-full rounded-xl bg-[#F8FAFC] border border-[#DCE5EB] flex items-center justify-center p-4">
+              <div className="relative h-64 w-full bg-[#F4F6F9] rounded-xl flex items-center justify-center p-4 border border-[#AFC0D2]/30">
                 <Image
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
                   fill
+                  sizes="400px"
                   className="object-contain p-4"
                 />
               </div>
-              <div className="space-y-4">
-                <p className="text-sm text-[#64748B] leading-relaxed">
+
+              <div>
+                <span className="text-xs font-bold text-[#D8A848] uppercase tracking-wider">
+                  {selectedProduct.category}
+                </span>
+                <h2 className="text-2xl font-bold text-[#002858] mt-1">
+                  {selectedProduct.name}
+                </h2>
+                <p className="text-sm text-[#172B45] leading-relaxed mt-3">
                   {selectedProduct.shortDescription}
                 </p>
-                <div>
-                  <h4 className="text-xs font-bold text-[#102D46] uppercase tracking-wider mb-2">
-                    Key Applications:
+              </div>
+
+              {/* Specifications Table */}
+              {selectedProduct.specifications && Object.keys(selectedProduct.specifications).length > 0 && (
+                <div className="bg-[#F4F6F9] rounded-xl p-4 border border-[#AFC0D2]/30 space-y-2.5">
+                  <h3 className="text-xs font-bold text-[#002858] uppercase tracking-wider">
+                    Technical Specifications
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                    {Object.entries(selectedProduct.specifications).map(([key, value], i) => (
+                      <div
+                        key={i}
+                        className="bg-white p-2.5 rounded border border-[#AFC0D2]/20 flex justify-between gap-2"
+                      >
+                        <span className="text-[#172B45]/70 font-medium">{key}:</span>
+                        <span className="font-bold text-[#002858] text-right">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Applications */}
+              {selectedProduct.applications && selectedProduct.applications.length > 0 && (
+                <div className="space-y-1.5">
+                  <h4 className="text-xs font-bold text-[#002858] uppercase tracking-wider">
+                    Typical Applications
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
                     {selectedProduct.applications.map((app, i) => (
                       <span
                         key={i}
-                        className="text-xs px-2.5 py-1 rounded-full bg-[#087E8B]/10 text-[#087E8B] font-medium"
+                        className="text-xs px-2.5 py-1 rounded bg-[#F4F6F9] border border-[#AFC0D2]/30 text-[#002858] font-medium"
                       >
                         {app}
                       </span>
                     ))}
                   </div>
                 </div>
-              </div>
-            </div>
+              )}
 
-            {/* Specifications Table */}
-            <div className="mb-6">
-              <h4 className="text-sm font-bold text-[#102D46] uppercase tracking-wider mb-3">
-                Technical Specifications
-              </h4>
-              <div className="rounded-lg border border-[#DCE5EB] divide-y divide-[#DCE5EB] overflow-hidden">
-                {Object.entries(selectedProduct.specifications).map(([key, val]) => (
-                  <div key={key} className="flex justify-between py-2.5 px-4 text-xs">
-                    <span className="font-semibold text-[#102D46]">{key}</span>
-                    <span className="text-[#64748B] text-right font-medium">{val}</span>
-                  </div>
-                ))}
+              {/* Modal CTA Buttons */}
+              <div className="pt-2 flex flex-wrap gap-3">
+                <Link
+                  href={`/contact?product=${encodeURIComponent(selectedProduct.name)}`}
+                  className="flex-1 py-3 px-4 rounded-md btn-gold text-xs font-bold text-center"
+                >
+                  Request Commercial Quotation
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setSelectedProduct(null)}
+                  className="py-3 px-6 rounded-md bg-[#F4F6F9] hover:bg-[#AFC0D2]/30 text-[#002858] border border-[#AFC0D2]/40 text-xs font-bold"
+                >
+                  Close
+                </button>
               </div>
-            </div>
-
-            {/* Actions */}
-            <div className="flex items-center justify-end gap-3 pt-4 border-t border-[#DCE5EB]">
-              <button
-                type="button"
-                onClick={() => setSelectedProduct(null)}
-                className="px-5 py-2.5 rounded text-sm font-semibold text-[#64748B] hover:bg-[#F5F8FA]"
-              >
-                Close
-              </button>
-              <Link
-                href={`/contact?product=${encodeURIComponent(selectedProduct.name)}`}
-                className="px-6 py-2.5 rounded btn-amber text-sm font-semibold flex items-center gap-2"
-              >
-                <span>Request Quote</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
           </div>
         </div>
       )}
 
-      {/* Exactly 3 Inner Page FAQs */}
+      {/* FAQs Section */}
       <FAQAccordion
         items={productsFaqs}
         title="Product &amp; Procurement FAQs"
         subtitle="Important information on commercial quotation timelines, environmental compliance, and lead times."
         badge="Catalog Inquiries"
       />
-
-      {/* Final CTA */}
-      <CtaBanner />
     </div>
   );
 }
-

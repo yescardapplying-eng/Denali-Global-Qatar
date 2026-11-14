@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Sora, Inter } from "next/font/google";
+import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import MouseFollower from "@/components/common/MouseFollower";
 import { companyData } from "@/data/company";
 
-const sora = Sora({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-sora",
+  variable: "--font-montserrat",
   display: "swap",
   weight: ["400", "500", "600", "700", "800"],
 });
@@ -23,16 +24,16 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0B2035",
+  themeColor: "#002858",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://denaliglobalqatar.com"),
   title: {
-    default: "Denali Global Trading and Contracting | HVAC, MEP & Fire Solutions Qatar",
+    default: "Denali Global Trading and Contracting | The Strength Behind Every Structure",
     template: "%s | Denali Global Trading & Contracting"
   },
-  description: "Premier Qatar engineering solutions provider for commercial HVAC, ventilation systems, hydronics, fire protection, and comprehensive technical maintenance services. CR No. 255619, Doha, Qatar.",
+  description: "Premier Qatar engineering solutions provider for commercial HVAC, ventilation systems, hydronics, fire protection, and comprehensive technical maintenance services. Doha, Qatar.",
   keywords: [
     "HVAC Solutions Qatar",
     "MEP Products Doha",
@@ -58,43 +59,39 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
-    },
-  },
-  icons: {
-    icon: [
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    }
   },
   openGraph: {
     type: "website",
     locale: "en_QA",
     url: "https://denaliglobalqatar.com",
     siteName: "Denali Global Trading and Contracting",
-    title: "Denali Global | International HVAC, MEP & Engineering Solutions",
-    description: "Delivering world-class HVAC, MEP, ventilation, fire protection, and technical services across Qatar. CR No. 255619.",
+    title: "Denali Global Trading and Contracting | Qatar",
+    description: "Integrated HVAC, MEP, fire protection, and specialized technical services across commercial, residential, and infrastructure sectors in Qatar.",
     images: [
       {
         url: "/logo/denali-logo-horizontal.png",
-        width: 1024,
-        height: 341,
-        alt: "Denali Global Trading and Contracting Logo",
-      },
-    ],
+        width: 1200,
+        height: 630,
+        alt: "Denali Global Trading and Contracting"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Denali Global Trading and Contracting | Doha, Qatar",
-    description: "International engineering solutions for HVAC, MEP, and life safety in Qatar.",
-    images: ["/logo/denali-logo-horizontal.png"],
+    title: "Denali Global Trading and Contracting | Qatar",
+    description: "Commercial HVAC, MEP systems, fire protection, and technical engineering services in Doha, Qatar.",
+    images: ["/logo/denali-logo-horizontal.png"]
   },
-  alternates: {
-    canonical: "https://denaliglobalqatar.com",
-  },
+  icons: {
+    icon: [
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo/denali-icon.png", sizes: "192x192", type: "image/png" }
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
+    ]
+  }
 };
 
 export default function RootLayout({
@@ -102,45 +99,40 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Structured Data Schema for Local Business / Corporation
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Denali Global Trading and Contracting",
-    alternateName: "Denali Global Qatar",
-    url: "https://denaliglobalqatar.com",
-    logo: "https://denaliglobalqatar.com/logo/denali-logo-horizontal.png",
-    image: "https://denaliglobalqatar.com/hero/hero-slide-1.jpg",
-    description: "Premier engineering solutions provider for commercial HVAC, MEP products, ventilation systems, hydronics, fire protection, and technical commissioning services in Doha, Qatar.",
-    identifier: {
-      "@type": "PropertyValue",
-      name: "Commercial Registration (CR)",
-      value: "255619"
-    },
-    address: {
+    "@type": "Corporation",
+    "name": companyData.name,
+    "alternateName": companyData.shortName,
+    "url": companyData.domain,
+    "logo": `${companyData.domain}/logo/denali-logo-horizontal.png`,
+    "description": "Denali Global Trading and Contracting is a premier engineering solutions provider in Qatar specializing in HVAC, MEP, fire protection, and technical services.",
+    "address": {
       "@type": "PostalAddress",
-      streetAddress: "Office No. 01/05, First Floor, Building No. 20, Street No. 854, Zone 27",
-      addressLocality: "Umm Ghuwailina Area, Doha",
-      addressRegion: "Doha",
-      addressCountry: "QA"
+      "streetAddress": `${companyData.address.building}, ${companyData.address.street}`,
+      "addressLocality": companyData.address.city,
+      "addressRegion": companyData.address.area,
+      "postalCode": companyData.address.zone,
+      "addressCountry": "QA"
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 25.2854,
-      longitude: 51.5310
-    },
-    email: "info@denaliglobalqatar.com",
-    priceRange: "$$$"
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": companyData.email
+    }
   };
 
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable}`}>
+    <html lang="en" className={`scroll-smooth ${montserrat.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col font-sans bg-white text-[#0B2035] antialiased selection:bg-[#F2A541] selection:text-[#0B2035]">
+      <body className="min-h-screen flex flex-col font-sans antialiased text-[#172B45] bg-white selection:bg-[#D8A848] selection:text-[#002858]">
+        <MouseFollower />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

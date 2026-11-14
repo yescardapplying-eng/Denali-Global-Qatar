@@ -2,12 +2,9 @@ import React from "react";
 import HeroCarousel from "@/components/home/HeroCarousel";
 import IntroSection from "@/components/home/IntroSection";
 import BusinessSolutions from "@/components/home/BusinessSolutions";
-import FeaturedProducts from "@/components/home/FeaturedProducts";
 import TechnicalServicesPreview from "@/components/home/TechnicalServicesPreview";
-import BrandsShowcase from "@/components/home/BrandsShowcase";
 import WhyChooseDenali from "@/components/home/WhyChooseDenali";
 import IndustryApplications from "@/components/home/IndustryApplications";
-import TestimonialSlider from "@/components/home/TestimonialSlider";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import CtaBanner from "@/components/home/CtaBanner";
 import { homepageFaqs } from "@/data/faqs";
@@ -15,34 +12,25 @@ import { homepageFaqs } from "@/data/faqs";
 export default function HomePage() {
   return (
     <div className="w-full overflow-hidden">
-      {/* SECTION 2 – HERO CAROUSEL (EXACTLY 3 SLIDES) */}
+      {/* 1. HERO CAROUSEL */}
       <HeroCarousel />
 
-      {/* SECTION 3 – INTRODUCTION */}
+      {/* 2. CORPORATE OVERVIEW */}
       <IntroSection />
 
-      {/* SECTION 4 – BUSINESS SOLUTIONS (8 INTERACTIVE CARDS) */}
+      {/* 3. SPECIALIZED BUSINESS SOLUTIONS (TOP 3 CORE DIVISIONS) */}
       <BusinessSolutions />
 
-      {/* SECTION 5 – FEATURED PRODUCTS */}
-      <FeaturedProducts />
-
-      {/* SECTION 6 – TECHNICAL SERVICES PREVIEW (4 SERVICE CARDS) */}
+      {/* 4. TECHNICAL SERVICES PREVIEW (TOP 2 ENGINEERING SERVICES) */}
       <TechnicalServicesPreview />
 
-      {/* SECTION 7 – INTERNATIONAL BRANDS (35 VERIFIED BRANDS) */}
-      <BrandsShowcase />
-
-      {/* SECTION 8 – WHY CHOOSE DENALI (6 CREDIBLE ADVANTAGES) */}
+      {/* 5. WHY CHOOSE DENALI (3 CORE COMMERCIAL ADVANTAGES) */}
       <WhyChooseDenali />
 
-      {/* SECTION 9 – PROJECT / INDUSTRY APPLICATIONS (6 SECTORS) */}
+      {/* 6. TARGET APPLICATION SECTORS (TOP 3 SECTORS) */}
       <IndustryApplications />
 
-      {/* SECTION 10 – TESTIMONIALS (EXACTLY 6 SLOTS) */}
-      <TestimonialSlider />
-
-      {/* SECTION 11 – HOMEPAGE FAQ (EXACTLY 6 FAQS) */}
+      {/* 7. HOMEPAGE FAQS */}
       <FAQAccordion
         items={homepageFaqs}
         title="Frequently Asked Questions"
@@ -50,7 +38,7 @@ export default function HomePage() {
         badge="Direct Inquiries"
       />
 
-      {/* SECTION 12 – FINAL CTA */}
+      {/* 8. FINAL CTA BANNER */}
       <CtaBanner />
     </div>
   );

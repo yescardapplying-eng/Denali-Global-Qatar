@@ -3,99 +3,80 @@ import Link from "next/link";
 import {
   Building2,
   Factory,
-  Hotel,
-  Hospital,
-  Home,
   Train,
   ArrowRight
 } from "lucide-react";
 
 export default function IndustryApplications() {
+  // Exactly 3 core sectors featured on homepage
   const sectors = [
     {
-      title: "Commercial Buildings",
-      desc: "High-rise office towers, financial headquarters, and multi-tenant complexes requiring zoned thermal comfort, VAV control, and energy metering.",
+      title: "Commercial & Office Towers",
+      desc: "High-rise business towers, financial headquarters, and multi-tenant complexes requiring zoned thermal comfort, VAV terminal modulation, and precision energy metering.",
       icon: Building2,
-      equipment: ["VRF Systems", "VAV Terminals", "PICV Balancing", "BTU Metering"]
+      equipment: ["VRF Heat Recovery", "VAV Terminals", "PICV Balancing Valves", "BTU Energy Meters"]
     },
     {
-      title: "Industrial Facilities",
-      desc: "Manufacturing plants, distribution logistics warehouses, and cold storage units demanding durable high-capacity ventilation and dehumidification.",
+      title: "Industrial & Logistics Facilities",
+      desc: "Manufacturing plants, distribution logistics hubs, and cold storage units demanding durable high-capacity ventilation, heavy-duty ductwork, and QCDD-certified fire skids.",
       icon: Factory,
-      equipment: ["Industrial Fans", "Smoke Extract F400", "Dehumidifiers", "Fire Skids"]
+      equipment: ["Industrial Axial Fans", "Smoke Extract F400", "Dehumidification Units", "NFPA Fire Skids"]
     },
     {
-      title: "Hospitality & Resorts",
-      desc: "Luxury 5-star hotels and resort properties necessitating whisper-quiet fan coils, domestic solar hot water, and 24/7 chiller reliability.",
-      icon: Hotel,
-      equipment: ["Low-Noise FCUs", "Thermosiphonic Solar", "Plate Exchangers", "Booster Pumps"]
-    },
-    {
-      title: "Healthcare & Cleanrooms",
-      desc: "Hospitals, medical labs, and surgical suites requiring hygienic AHUs, HEPA filtration, medical copper piping, and precision close control.",
-      icon: Hospital,
-      equipment: ["Hygienic AHUs", "Medical Gas Copper", "Close Control (CCU)", "IAQ Testing"]
-    },
-    {
-      title: "Residential Developments",
-      desc: "Master-planned residential compounds and luxury villa towers requiring efficient split DX units, domestic plumbing risers, and booster sets.",
-      icon: Home,
-      equipment: ["DX Air Conditioners", "Copper Tubes", "PRV Stations", "Water Tanks"]
-    },
-    {
-      title: "Infrastructure Projects",
-      desc: "Underground metro transit stations, airports, and road tunnels requiring jet fan thrust ventilation and QCDD certified fire hydrants.",
+      title: "Infrastructure & Transport Hubs",
+      desc: "Underground metro transit networks, airports, passenger terminals, and road tunnels requiring jet fan thrust ventilation and seismic pipe support systems.",
       icon: Train,
-      equipment: ["Impulse Jet Fans", "Municipal Hydrants", "Seismic Framing", "Patterson Pumps"]
+      equipment: ["Impulse Jet Fans", "Municipal Hydrants", "Seismic Strut Framing", "Submersible Pumps"]
     }
   ];
 
   return (
-    <section className="py-24 bg-[#F5F8FA] border-b border-[#DCE5EB]">
+    <section className="py-20 sm:py-24 bg-[#F4F6F9] border-b border-[#AFC0D2]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#087E8B]/10 text-[#087E8B] text-xs font-semibold uppercase tracking-wider">
-            <span>Market Relevance</span>
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002858]/10 text-[#002858] text-xs font-bold uppercase tracking-wider">
+            <span>Market Applications</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B2035] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#002858] tracking-tight">
             Target Application Sectors
           </h2>
-          <p className="text-[#64748B] text-base sm:text-lg leading-relaxed">
+          <div className="w-16 h-1 bg-[#D8A848] mx-auto rounded-full" />
+          <p className="text-[#172B45] text-base sm:text-lg leading-relaxed pt-1">
             Engineered systems designed to meet the rigorous acoustic, climatic, and safety standards of Qatar&apos;s leading development sectors.
           </p>
         </div>
 
-        {/* Sectors Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 3 Sectors Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {sectors.map((sec, i) => {
             const Icon = sec.icon;
             return (
               <div
                 key={i}
-                className="bg-white rounded-xl p-7 border border-[#DCE5EB] hover:border-[#087E8B] transition-all duration-300 denali-card flex flex-col justify-between group"
+                className="bg-white rounded-xl p-7 sm:p-8 border border-[#AFC0D2]/40 hover:border-[#D8A848] transition-all duration-300 denali-card flex flex-col justify-between group shadow-xs"
               >
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-lg bg-[#F5F8FA] border border-[#DCE5EB] flex items-center justify-center text-[#087E8B] group-hover:bg-[#087E8B] group-hover:text-white transition-colors duration-300">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-14 h-14 rounded-xl bg-[#F4F6F9] border border-[#AFC0D2]/30 flex items-center justify-center text-[#002858] group-hover:bg-[#002858] group-hover:text-[#D8A848] transition-all duration-300">
+                    <Icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0B2035] group-hover:text-[#087E8B] transition-colors">
+                  <h3 className="text-xl font-bold text-[#002858] group-hover:text-[#D8A848] transition-colors">
                     {sec.title}
                   </h3>
-                  <p className="text-sm text-[#64748B] leading-relaxed">
+                  <p className="text-sm text-[#172B45] leading-relaxed">
                     {sec.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#F5F8FA]">
-                  <span className="text-[11px] font-semibold text-[#102D46] uppercase tracking-wider block mb-2">
-                    Key Systems:
+                <div className="mt-6 pt-5 border-t border-[#AFC0D2]/20">
+                  <span className="text-[11px] font-bold text-[#002858] uppercase tracking-wider block mb-2.5">
+                    Engineered Systems:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {sec.equipment.map((item, idx) => (
                       <span
                         key={idx}
-                        className="text-xs px-2.5 py-1 rounded bg-[#F5F8FA] border border-[#DCE5EB] text-[#1F4965] font-medium"
+                        className="text-xs px-2.5 py-1 rounded bg-[#F4F6F9] border border-[#AFC0D2]/40 text-[#002858] font-medium"
                       >
                         {item}
                       </span>
@@ -110,4 +91,3 @@ export default function IndustryApplications() {
     </section>
   );
 }
-
