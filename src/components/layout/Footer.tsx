@@ -20,7 +20,7 @@ export default function Footer() {
                   alt="Denali Global Trading and Contracting"
                   fill
                   sizes="320px"
-                  className="object-contain object-left group-hover:scale-[1.02] transition-transform duration-300"
+                  className="object-contain object-left drop-shadow-md group-hover:scale-[1.02] transition-transform duration-300"
                 />
               </div>
             </Link>

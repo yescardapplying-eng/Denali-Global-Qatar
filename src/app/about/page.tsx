@@ -107,7 +107,7 @@ export default function AboutPage() {
                     alt="Denali Global Trading and Contracting"
                     fill
                     sizes="300px"
-                    className="object-contain object-left"
+                    className="object-contain object-left drop-shadow-md"
                   />
                 </div>
 
