@@ -4,24 +4,22 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FAQAccordion from "@/components/ui/FAQAccordion";
-import { productsData, productCategories, Product } from "@/data/products";
+import { productsData, Product } from "@/data/products";
 import { productsFaqs } from "@/data/faqs";
 import { Search, ShieldCheck, ArrowRight, X, Filter } from "lucide-react";
 
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const filteredProducts = productsData.filter((p) => {
-    const matchesCategory =
-      selectedCategory === "All Categories" || p.category === selectedCategory;
-    const matchesSearch =
-      p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (p.shortDescription && p.shortDescription.toLowerCase().includes(searchQuery.toLowerCase()));
-
-    return matchesCategory && matchesSearch;
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    return (
+      p.name.toLowerCase().includes(q) ||
+      (p.category && p.category.toLowerCase().includes(q)) ||
+      (p.shortDescription && p.shortDescription.toLowerCase().includes(q))
+    );
   });
 
   return (
@@ -48,8 +46,8 @@ export default function ProductsPage() {
 
       {/* Catalogue & Filters Section */}
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Controls Bar: Search & Selectors */}
-        <div className="bg-white p-6 rounded-2xl border border-[#AFC0D2]/40 mb-10 space-y-5 shadow-xs">
+        {/* Controls Bar: Search & Equipment Count */}
+        <div className="bg-white p-6 rounded-2xl border border-[#AFC0D2]/40 mb-10 shadow-xs">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
             {/* Search Bar */}
             <div className="md:col-span-8 relative">
@@ -79,24 +77,6 @@ export default function ProductsPage() {
                 {filteredProducts.length} Items Available
               </span>
             </div>
-          </div>
-
-          {/* Category Tabs */}
-          <div className="flex flex-wrap gap-2 pt-2 border-t border-[#AFC0D2]/20">
-            {productCategories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  selectedCategory === cat
-                    ? "bg-[#002858] text-[#D8A848] shadow-sm border border-[#D8A848]/30"
-                    : "bg-[#F4F6F9] text-[#172B45] hover:bg-[#AFC0D2]/20 border border-[#AFC0D2]/40"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
           </div>
         </div>
 
@@ -137,12 +117,8 @@ export default function ProductsPage() {
                 </div>
               </div>
 
-              {/* 4. Bottom Category Label & Action Bar */}
-              <div className="pt-3 border-t border-slate-100 space-y-3">
-                <span className="text-[11px] font-extrabold text-[#D8A848] uppercase tracking-wider block text-center">
-                  {product.category}
-                </span>
-
+              {/* 4. Action Bar */}
+              <div className="pt-3 border-t border-slate-100">
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
@@ -170,17 +146,14 @@ export default function ProductsPage() {
         {filteredProducts.length === 0 && (
           <div className="text-center py-20 bg-white rounded-2xl border border-dashed border-[#AFC0D2]/60 space-y-3">
             <p className="text-[#172B45] text-base font-medium">
-              No engineering products match your current filter criteria.
+              No engineering products match your current search query.
             </p>
             <button
               type="button"
-              onClick={() => {
-                setSearchQuery("");
-                setSelectedCategory("All Categories");
-              }}
+              onClick={() => setSearchQuery("")}
               className="px-5 py-2.5 rounded text-xs font-bold btn-gold"
             >
-              Reset All Filters
+              Clear Search
             </button>
           </div>
         )}
