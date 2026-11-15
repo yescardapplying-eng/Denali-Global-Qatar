@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MouseFollower from "@/components/common/MouseFollower";
+import ScrollRevealObserver from "@/components/common/ScrollRevealObserver";
 import { companyData } from "@/data/company";
 
 const montserrat = Montserrat({
@@ -133,6 +134,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col font-sans antialiased text-[#172B45] bg-white selection:bg-[#D8A848] selection:text-[#002858] overflow-x-hidden max-w-full w-full relative">
         <MouseFollower />
+        <ScrollRevealObserver />
         <Header />
         <main className="flex-grow overflow-x-hidden w-full max-w-full">{children}</main>
         <Footer />

@@ -1,17 +1,43 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { mainNavItems } from "@/data/navigation";
+import { mainNavItems, serviceNavCategories } from "@/data/navigation";
 import { companyData } from "@/data/company";
-import { Menu, X, Mail, MapPin, ArrowRight, ShieldCheck } from "lucide-react";
+import {
+  Menu,
+  X,
+  Mail,
+  MapPin,
+  ArrowRight,
+  ShieldCheck,
+  ChevronDown,
+  ChevronRight,
+  Wrench,
+  Cpu,
+  Gauge,
+  RefreshCw,
+  Layers
+} from "lucide-react";
+
+const categoryIconMap: { [key: string]: React.ElementType } = {
+  "/services/installation-fitout": Wrench,
+  "/services/hvac-mep-contracting": Cpu,
+  "/services/design-services": Gauge,
+  "/services/retrofit-fabrication": RefreshCw,
+  "/services/service-maintenance": ShieldCheck,
+};
 
 export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [mobileServicesExpanded, setMobileServicesExpanded] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,10 +59,35 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  // Close mobile menu on route change
+  // Close mobile menu and dropdown on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setServicesDropdownOpen(false);
   }, [pathname]);
+
+  // Close desktop dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setServicesDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (dropdownTimerRef.current) {
+      clearTimeout(dropdownTimerRef.current);
+    }
+    setServicesDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimerRef.current = setTimeout(() => {
+      setServicesDropdownOpen(false);
+    }, 200);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300">
@@ -86,7 +137,11 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-3 w-full">
           {/* Main Horizontal Logo */}
-          <Link href="/" className="flex items-center min-w-0 flex-shrink group relative z-10" aria-label="Denali Global Home">
+          <Link
+            href="/"
+            className="flex items-center min-w-0 flex-shrink group relative z-10"
+            aria-label="Denali Global Home"
+          >
             <div className="relative h-9 w-40 sm:h-12 sm:w-60 md:h-14 md:w-72 lg:h-16 lg:w-80 max-w-[58vw] sm:max-w-none">
               <Image
                 src="/logo/denali-logo-horizontal.png"
@@ -116,6 +171,100 @@ export default function Header() {
                   >
                     {item.name}
                   </Link>
+                );
+              }
+
+              // Dropdown for Our Services
+              if (item.hasDropdown) {
+                return (
+                  <div
+                    key={item.href}
+                    ref={dropdownRef}
+                    className="relative"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setServicesDropdownOpen(false)}
+                      className={`px-3 py-2 text-xs xl:text-sm font-semibold rounded-md transition-colors inline-flex items-center gap-1 ${
+                        isActive
+                          ? "text-[#D8A848] font-bold"
+                          : "text-[#002858] hover:text-[#D8A848]"
+                      }`}
+                    >
+                      <span>{item.name}</span>
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                          servicesDropdownOpen ? "rotate-180 text-[#D8A848]" : ""
+                        }`}
+                      />
+                    </Link>
+
+                    {/* Desktop Dropdown Flyout Panel */}
+                    {servicesDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-xl shadow-2xl border border-slate-100 py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                        <div className="px-4 py-2 border-b border-slate-100 flex items-center justify-between">
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#002858]">
+                            Service Divisions
+                          </span>
+                          <span className="text-[10px] font-semibold text-[#D8A848] bg-[#D8A848]/10 px-2 py-0.5 rounded-full">
+                            5 Categories
+                          </span>
+                        </div>
+
+                        <div className="p-1 space-y-1">
+                          {serviceNavCategories.map((sub) => {
+                            const IconComponent = categoryIconMap[sub.href] || Layers;
+                            const isSubActive = pathname === sub.href;
+
+                            return (
+                              <Link
+                                key={sub.href}
+                                href={sub.href}
+                                onClick={() => setServicesDropdownOpen(false)}
+                                className={`flex items-start gap-3 p-2.5 rounded-lg transition-all group/item ${
+                                  isSubActive
+                                    ? "bg-[#002858]/5 text-[#D8A848]"
+                                    : "hover:bg-[#F4F6F9] text-[#002858]"
+                                }`}
+                              >
+                                <div className="w-8 h-8 rounded-md bg-[#002858]/5 group-hover/item:bg-[#D8A848]/20 text-[#002858] group-hover/item:text-[#002858] flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors">
+                                  <IconComponent className="w-4 h-4 text-[#D8A848]" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-center justify-between">
+                                    <span className="text-xs font-bold text-[#002858] group-hover/item:text-[#D8A848] transition-colors truncate">
+                                      {sub.name}
+                                    </span>
+                                    {sub.count && (
+                                      <span className="text-[10px] font-semibold text-[#172B45]/60 bg-slate-100 px-1.5 py-0.2 rounded ml-1 flex-shrink-0">
+                                        {sub.count}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <p className="text-[11px] text-[#172B45]/70 line-clamp-1 mt-0.5">
+                                    {sub.desc}
+                                  </p>
+                                </div>
+                              </Link>
+                            );
+                          })}
+                        </div>
+
+                        <div className="pt-2 px-3 border-t border-slate-100 mt-1">
+                          <Link
+                            href="/services"
+                            onClick={() => setServicesDropdownOpen(false)}
+                            className="flex items-center justify-between p-2 rounded-lg bg-[#002858] text-white hover:bg-[#D8A848] hover:text-[#002858] transition-colors text-xs font-bold text-center"
+                          >
+                            <span>View Services</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 );
               }
 
@@ -159,23 +308,87 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Dropdown Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[56px] sm:top-[66px] bottom-0 bg-white z-40 border-t border-slate-200 overflow-y-auto overflow-x-hidden px-5 sm:px-6 py-6 sm:py-8 flex flex-col justify-between shadow-2xl w-full max-w-full">
-          <div className="space-y-3">
+        <div className="lg:hidden fixed inset-x-0 top-[56px] sm:top-[66px] bottom-0 bg-white z-40 border-t border-slate-200 overflow-y-auto overflow-x-hidden px-5 sm:px-6 py-5 sm:py-6 flex flex-col justify-between shadow-2xl w-full max-w-full">
+          <div className="space-y-2">
             <p className="text-xs font-bold text-[#D8A848] uppercase tracking-wider mb-2">
               Menu Navigation
             </p>
+
             {mainNavItems.map((item) => {
               const isActive =
                 item.href === "/"
                   ? pathname === "/"
                   : pathname.startsWith(item.href);
 
+              if (item.hasDropdown) {
+                return (
+                  <div key={item.href} className="border border-slate-100 rounded-lg overflow-hidden bg-slate-50/50">
+                    <div className="flex items-center justify-between p-3 bg-white">
+                      <Link
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`text-base font-bold transition-colors ${
+                          isActive ? "text-[#D8A848]" : "text-[#002858]"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => setMobileServicesExpanded(!mobileServicesExpanded)}
+                        className="p-1 text-[#002858] hover:text-[#D8A848]"
+                        aria-label="Toggle Services List"
+                      >
+                        <ChevronDown
+                          className={`w-5 h-5 transition-transform duration-200 ${
+                            mobileServicesExpanded ? "rotate-180 text-[#D8A848]" : ""
+                          }`}
+                        />
+                      </button>
+                    </div>
+
+                    {mobileServicesExpanded && (
+                      <div className="p-2 space-y-1 bg-slate-50 border-t border-slate-100">
+                        {serviceNavCategories.map((sub) => {
+                          const IconComponent = categoryIconMap[sub.href] || Layers;
+                          const isSubActive = pathname === sub.href;
+
+                          return (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className={`flex items-center justify-between p-2.5 rounded-md text-xs font-semibold transition-colors ${
+                                isSubActive
+                                  ? "bg-[#002858] text-[#D8A848]"
+                                  : "text-[#002858] hover:bg-white"
+                              }`}
+                            >
+                              <div className="flex items-center gap-2 min-w-0">
+                                <IconComponent className="w-3.5 h-3.5 text-[#D8A848] flex-shrink-0" />
+                                <span className="truncate">{sub.name}</span>
+                              </div>
+                              {sub.count && (
+                                <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/40 text-[#002858] font-bold flex-shrink-0">
+                                  {sub.count}
+                                </span>
+                              )}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
                   className={`block py-3 px-4 rounded-lg text-base font-semibold transition-colors ${
                     isActive
                       ? "bg-[#002858] text-[#D8A848]"
@@ -188,16 +401,17 @@ export default function Header() {
             })}
           </div>
 
-          <div className="pt-8 border-t border-slate-200 space-y-3 text-xs text-[#172B45]">
+          <div className="pt-6 border-t border-slate-200 space-y-3 text-xs text-[#172B45] mt-6">
             <p className="font-bold text-[#002858]">{companyData.name}</p>
             <p>{companyData.address.full}</p>
             <p className="text-[#D8A848] font-semibold">{companyData.crNumber}</p>
             <div className="pt-2">
               <Link
                 href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full block py-3 rounded-md text-center text-sm font-bold btn-primary"
               >
-                Request Commercial Quotation
+                Request Quote
               </Link>
             </div>
           </div>

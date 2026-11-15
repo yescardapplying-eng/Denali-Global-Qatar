@@ -162,8 +162,48 @@ h1, h2, h3, h4, h5, h6 {
   animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Site-Wide Scroll Reveal Animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays for Sequential Elements */
+.scroll-reveal[data-delay="1"] {
+  transition-delay: 80ms;
+}
+.scroll-reveal[data-delay="2"] {
+  transition-delay: 160ms;
+}
+.scroll-reveal[data-delay="3"] {
+  transition-delay: 240ms;
+}
+.scroll-reveal[data-delay="4"] {
+  transition-delay: 320ms;
+}
+
+/* Card Icon Hover Micro-Interactions */
+.denali-card .w-12, .denali-card .w-10 {
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.denali-card:hover .w-12, .denali-card:hover .w-10 {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 4px 14px rgba(216, 168, 72, 0.35);
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
   .denali-card:hover {
     transform: none;
   }

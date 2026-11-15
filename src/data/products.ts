@@ -208,24 +208,6 @@ export const productsData: Product[] = [
 
   // B. VENTILATION
   {
-    id: "sp-ventilation",
-    name: "Industrial & Commercial Ventilation Fans",
-    category: "Ventilation Systems",
-    brandId: "sp",
-    brandName: "Soler & Palau (S&P)",
-    brandLogo: "/brands/sp.png",
-    image: "/products/sp-ventilation.png",
-    shortDescription: "Acoustically insulated inline centrifugal duct fans, roof extractors, and smoke extract fans certified for F400 (400°C/2h).",
-    specifications: {
-      "Smoke Rating": "F400 (400°C for 120 minutes) EN 12101-3",
-      "Impeller Type": "High-Efficiency Backward Curved Centrifugal",
-      "Acoustics": "Integrated Double-Wall Sound Baffles",
-      "Motor Ingress": "IP55 / Class H Insulation"
-    },
-    applications: ["Smoke Extraction", "Car Parks", "Industrial Warehouses"],
-    featured: true
-  },
-  {
     id: "sp-jet-fans",
     name: "Car Park Impulse Jet Fans",
     category: "Ventilation Systems",
@@ -311,24 +293,6 @@ export const productsData: Product[] = [
       "Actuation": "0-10V Modulating / 3-Point Floating"
     },
     applications: ["AHU Coils", "FCU Terminals", "District Cooling Substations"],
-    featured: true
-  },
-  {
-    id: "alfa-laval-heat-exchangers",
-    name: "Gasketed Plate Heat Exchangers",
-    category: "Hydronic & Piping",
-    brandId: "alfa-laval",
-    brandName: "Alfa Laval",
-    brandLogo: "/brands/alfa-laval.png",
-    image: "/products/alfa-laval-phex.png",
-    shortDescription: "World-class gasketed plate heat exchangers delivering high thermal efficiency for district cooling energy transfer stations (ETS).",
-    specifications: {
-      "Design Pressure": "Up to 25 / 30 bar Design Rating",
-      "Plate Materials": "AISI 316 Stainless Steel / Titanium",
-      "Gasket Type": "NBR Clip-on / EPDM Industrial Gaskets",
-      "Certification": "AHRI Certified Performance"
-    },
-    applications: ["District Cooling ETS", "Pressure Breaker Systems", "Thermal Energy Storage"],
     featured: true
   },
   {
@@ -433,62 +397,10 @@ export const productsData: Product[] = [
     },
     applications: ["Fire Water Mains", "Municipal Infrastructure", "Underground Piping"]
   },
-  {
-    id: "strut-support-systems",
-    name: "Modular Metal Framing & Strut Systems",
-    category: "Hydronic & Piping",
-    brandId: "strut",
-    brandName: "STRUT Support Systems",
-    brandLogo: "/brands/strut.png",
-    image: "/products/strut-framing.png",
-    shortDescription: "Slotted and plain cold-rolled metal framing channels, pipe clamps, cantilever brackets, and seismic bracing accessories.",
-    specifications: {
-      "Channel Profile": "41x41mm / 41x21mm Unistrut Compatible",
-      "Finishes": "Hot-Dip Galvanized / Pre-Galv / Stainless",
-      "Gauge Thickness": "2.5mm / 2.0mm Heavy Structural Gauge",
-      "Compliance": "BS 6946 Metal Channel Standards"
-    },
-    applications: ["Pipe Racks", "Cable Trays", "Ductwork Trapeze", "HVAC Supports"]
-  },
 
   // D. SOLAR AND WATER HEATING
-  {
-    id: "alpak-solar-systems",
-    name: "Thermosiphonic & Forced Solar Systems",
-    category: "Solar & Water Heating",
-    brandId: "alpak",
-    brandName: "Alpak",
-    brandLogo: "/brands/alpak.png",
-    image: "/products/alpak-solar.png",
-    shortDescription: "European engineered thermosiphonic solar hot water systems and high-capacity ultratanks with selective blue solar absorbers.",
-    specifications: {
-      "Tank Volume": "150L to 500L Storage Capacities",
-      "Solar Absorber": "Titanium PVD Selective Coating (95% Absorptivity)",
-      "Tank Material": "Enamelled Steel with Double Glass Lining",
-      "Efficiency": "Solar Keymark EN 12976 Certified"
-    },
-    applications: ["Residential Villas", "Hotels", "Staff Accommodation", "Commercial Laundry"]
-  },
 
   // E. PUMPS AND INSTRUMENTATION
-  {
-    id: "general-pumps-centrifugal",
-    name: "Commercial Centrifugal Water Pumps",
-    category: "Pumps & Instrumentation",
-    brandId: "general-pumps",
-    brandName: "General Pumps Spain",
-    brandLogo: "/brands/general-pumps.png",
-    image: "/products/general-pumps.png",
-    shortDescription: "Spanish end-suction, in-line circulator, and vertical multistage centrifugal pumps for chilled water and domestic booster packages.",
-    specifications: {
-      "Flow Range": "Up to 1,200 m³/h Flow Rate",
-      "Head Range": "Up to 160 meters Head Pressure",
-      "Impeller Material": "AISI 316 Stainless Steel / Bronze",
-      "Motor Efficiency": "IE3 Premium High Efficiency Motors"
-    },
-    applications: ["Chilled Water Circulation", "Pressure Boosting", "Irrigation"],
-    featured: true
-  },
   {
     id: "winters-pressure-gauges",
     name: "Industrial Pressure Gauges & Thermometers",
@@ -645,57 +557,6 @@ export const productsData: Product[] = [
       "Standards": "BS EN 671-1 Compliant"
     },
     applications: ["Commercial Lobbies", "Hotel Corridors", "Parking Basements"]
-  },
-  {
-    id: "siex-suppression",
-    name: "Clean Agent Total Flooding Suppression Systems",
-    category: "Fire Fighting & Protection",
-    brandId: "siex",
-    brandName: "SIEX Fire Suppression",
-    brandLogo: "/brands/siex.png",
-    image: "/products/siex-suppression.png",
-    shortDescription: "Engineered automatic gaseous total flooding systems using FK-5-1-12 (Novec 1230), HFC-227ea (FM-200), and Inergen inert gases.",
-    specifications: {
-      "Agents": "FK-5-1-12, HFC-227ea, IG-541, IG-55, Carbon Dioxide",
-      "Cylinder Storage": "25 bar, 42 bar, 50 bar, 300 bar Systems",
-      "Discharge Time": "Within 10 seconds rapid extinguishing",
-      "Environmental": "Zero ODP (Ozone Depletion Potential)"
-    },
-    applications: ["Server Rooms", "Control Rooms", "Museum Archives", "Telecommunication Hubs"]
-  },
-  {
-    id: "wilson-cousins-fdc",
-    name: "Fire Department Connections (FDC)",
-    category: "Fire Fighting & Protection",
-    brandId: "wilson-cousins",
-    brandName: "Wilson & Cousins",
-    brandLogo: "/brands/wilson-cousins.png",
-    image: "/products/wilson-fdc.png",
-    shortDescription: "Solid cast brass Siamese two-way and four-way fire department connections (FDC) with clappers and polished escutcheons.",
-    specifications: {
-      "Configuration": "Two-Way 4\" x 2.5\" x 2.5\" Siamese Inlets",
-      "Threads": "BS 336 Instantaneous Female / NST Threads",
-      "Material": "Cast Red Brass with Polished Chrome or Brass",
-      "Compliance": "NFPA 14 / UL Listed Standards"
-    },
-    applications: ["Building Perimeter Risers", "Civil Defense Inlets", "Dry/Wet Risers"]
-  },
-  {
-    id: "lingjack-landing-valves",
-    name: "Flanged Oblique Fire Landing Valves",
-    category: "Fire Fighting & Protection",
-    brandId: "lingjack",
-    brandName: "Lingjack Fire & Safety",
-    brandLogo: "/brands/lingjack.png",
-    image: "/products/lingjack-valves.png",
-    shortDescription: "Gunmetal and bronze oblique pattern landing valves designed for wet risers and standpipe systems in high-rise buildings.",
-    specifications: {
-      "Size": "DN65 (2.5\") Flanged PN16 Inlet",
-      "Outlet": "BS 336 Female Instantaneous with Cap & Chain",
-      "Body Material": "Leaded Gunmetal LG2 / High Tensile Bronze",
-      "Hydrostatic Test": "20 bar Shell / 16 bar Seat Tested"
-    },
-    applications: ["Fire Exit Stairwells", "Wet Riser Manifolds", "Industrial Complexes"]
   },
   {
     id: "ceasefire-auto-extinguisher",
