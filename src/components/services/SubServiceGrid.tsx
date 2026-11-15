@@ -120,7 +120,8 @@ export default function SubServiceGrid({
           return (
             <div
               key={sub.id}
-              className="group bg-white rounded-xl border border-[#AFC0D2]/40 hover:border-[#D8A848] p-6 flex flex-col justify-between transition-all duration-300 denali-card shadow-xs hover:shadow-md relative overflow-hidden"
+              className="group bg-white rounded-xl border border-[#AFC0D2]/40 hover:border-[#D8A848] p-6 flex flex-col justify-between transition-all duration-300 denali-card shadow-xs hover:shadow-md relative overflow-hidden scroll-reveal"
+              data-delay={String((index % 3) + 1)}
             >
               <div className="space-y-4">
                 {/* Header Icon + Number Badge */}

@@ -46,7 +46,7 @@ export default function TechnicalServicesPreview() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 scroll-reveal">
           <div className="max-w-2xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002858] border border-[#D8A848]/30 text-[#D8A848] text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4 text-[#D8A848]" />
@@ -72,13 +72,14 @@ export default function TechnicalServicesPreview() {
 
         {/* 2 Featured Technical Service Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8 sm:gap-10">
-          {technicalServices.map((srv) => {
+          {technicalServices.map((srv, index) => {
             const Icon = srv.icon;
 
             return (
               <div
                 key={srv.id}
-                className="bg-[#172B45] rounded-xl overflow-hidden border border-[#AFC0D2]/25 hover:border-[#D8A848] transition-all duration-300 flex flex-col justify-between group denali-card shadow-lg"
+                className="bg-[#172B45] rounded-xl overflow-hidden border border-[#AFC0D2]/25 hover:border-[#D8A848] transition-all duration-300 flex flex-col justify-between group denali-card shadow-lg scroll-reveal"
+                data-delay={String(index + 1)}
               >
                 <div>
                   {/* Card Image - Clear visibility without heavy wash */}

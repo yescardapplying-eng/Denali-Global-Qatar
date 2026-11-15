@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { FAQItem } from "@/data/faqs";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, HelpCircle, Sparkles } from "lucide-react";
 
 interface FAQAccordionProps {
   items: FAQItem[];
@@ -17,7 +17,6 @@ export default function FAQAccordion({
   subtitle = "Clear answers regarding our product sourcing, engineering capabilities, and technical maintenance services.",
   badge = "Common Inquiries"
 }: FAQAccordionProps) {
-  // State for exactly one question open at a time (null if none, index if open)
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleAccordion = (index: number) => {
@@ -25,45 +24,68 @@ export default function FAQAccordion({
   };
 
   return (
-    <section className="py-20 bg-[#F5F8FA] border-b border-[#DCE5EB]" id="faqs">
+    <section className="py-20 sm:py-24 bg-[#F4F6F9] border-t border-[#AFC0D2]/40" id="faqs">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#087E8B]/10 text-[#087E8B] text-xs font-semibold uppercase tracking-wider">
+        <div className="text-center mb-12 sm:mb-16 space-y-3 scroll-reveal">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002858]/10 text-[#002858] text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-[#D8A848]" />
             <span>{badge}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B2035] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#002858] tracking-tight">
             {title}
           </h2>
-          <p className="text-[#64748B] text-sm sm:text-base leading-relaxed">
+          <div className="w-16 h-1 bg-[#D8A848] mx-auto rounded-full" />
+          <p className="text-[#172B45] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto pt-1">
             {subtitle}
           </p>
         </div>
 
-        {/* Accordion Container */}
-        <div className="space-y-3">
+        {/* Accordion List with Staggered Entrance */}
+        <div className="space-y-4">
           {items.map((item, index) => {
             const isOpen = openIndex === index;
 
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-xl border border-[#DCE5EB] overflow-hidden transition-all duration-200"
+                className={`rounded-2xl transition-all duration-300 denali-card overflow-hidden scroll-reveal ${
+                  isOpen
+                    ? "bg-white border-2 border-[#D8A848] shadow-md"
+                    : "bg-white border border-[#AFC0D2]/40 hover:border-[#D8A848]/60 shadow-xs"
+                }`}
+                data-delay={String((index % 4) + 1)}
               >
                 <button
                   type="button"
                   onClick={() => toggleAccordion(index)}
                   aria-expanded={isOpen}
-                  className="w-full py-4 sm:py-5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-[#087E8B]/30 hover:bg-[#F8FAFC] transition-colors"
+                  className="w-full py-4 sm:py-5 px-5 sm:px-6 text-left flex items-center justify-between gap-4 focus:outline-none transition-colors group"
                 >
-                  <span className="text-base sm:text-lg font-bold text-[#0B2035]">
-                    {item.question}
-                  </span>
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span
+                      className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 transition-colors ${
+                        isOpen
+                          ? "bg-[#D8A848] text-[#002858]"
+                          : "bg-[#002858]/5 text-[#002858] group-hover:bg-[#D8A848]/20"
+                      }`}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className={`text-base sm:text-lg font-bold transition-colors leading-snug ${
+                        isOpen ? "text-[#002858]" : "text-[#002858] group-hover:text-[#D8A848]"
+                      }`}
+                    >
+                      {item.question}
+                    </span>
+                  </div>
+
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                       isOpen
-                        ? "rotate-180 bg-[#087E8B] text-white"
-                        : "bg-[#F5F8FA] text-[#102D46]"
+                        ? "rotate-180 bg-[#002858] text-[#D8A848] shadow-xs"
+                        : "bg-[#F4F6F9] text-[#002858] group-hover:bg-[#002858]/10"
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -72,12 +94,12 @@ export default function FAQAccordion({
 
                 {/* Animated Answer Body */}
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                  className={`transition-all duration-400 ease-in-out overflow-hidden ${
                     isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="px-5 sm:px-6 pb-5 pt-1 text-sm sm:text-base text-[#64748B] leading-relaxed border-t border-[#F5F8FA]">
-                    {item.answer}
+                  <div className="px-5 sm:px-6 pb-5 pt-2 text-sm sm:text-base text-[#172B45]/90 leading-relaxed border-t border-slate-100 bg-[#F4F6F9]/40">
+                    <p>{item.answer}</p>
                   </div>
                 </div>
               </div>
@@ -88,4 +110,3 @@ export default function FAQAccordion({
     </section>
   );
 }
-

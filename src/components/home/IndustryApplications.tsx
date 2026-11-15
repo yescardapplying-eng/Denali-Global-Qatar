@@ -25,7 +25,7 @@ export default function IndustryApplications() {
     <section className="py-20 sm:py-24 bg-[#F4F6F9] border-b border-[#AFC0D2]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4 scroll-reveal">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002858]/10 text-[#002858] text-xs font-bold uppercase tracking-wider">
             <span>Market Applications</span>
           </div>
@@ -45,7 +45,8 @@ export default function IndustryApplications() {
             return (
               <div
                 key={i}
-                className="bg-white rounded-xl p-8 border border-[#AFC0D2]/40 hover:border-[#D8A848] transition-all duration-300 denali-card flex flex-col justify-between group shadow-sm"
+                className="bg-white rounded-xl p-8 border border-[#AFC0D2]/40 hover:border-[#D8A848] transition-all duration-300 denali-card flex flex-col justify-between group shadow-sm scroll-reveal"
+                data-delay={String(i + 1)}
               >
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-xl bg-[#F4F6F9] border border-[#AFC0D2]/30 flex items-center justify-center text-[#002858] group-hover:bg-[#002858] group-hover:text-[#D8A848] transition-all duration-300">

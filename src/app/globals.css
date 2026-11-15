@@ -29,6 +29,9 @@
   --text-body: #172B45;
   --accent-gold: #D8A848;
   --border-light: #AFC0D2;
+
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
@@ -79,14 +82,38 @@ h1, h2, h3, h4, h5, h6 {
   background: #D8A848;
 }
 
-/* Interactive Card Lift & Hover Effects */
+/* ==========================================================================
+   PREMIUM MOTION & INTERACTION ENGINE
+   ========================================================================== */
+
+/* Interactive Card Lift & Hover Effects with Gold Accent */
 .denali-card {
-  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 350ms cubic-bezier(0.16, 1, 0.3, 1), border-color 350ms ease;
+  transition: transform 450ms var(--ease-smooth),
+              box-shadow 450ms var(--ease-smooth),
+              border-color 350ms ease;
+  will-change: transform, box-shadow;
 }
 .denali-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 32px -8px rgba(0, 40, 88, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -12px rgba(0, 40, 88, 0.16), 0 0 0 1px rgba(216, 168, 72, 0.4);
   border-color: #D8A848;
+}
+
+/* Card Icon Micro-Interactions */
+.denali-card .w-12, 
+.denali-card .w-14, 
+.denali-card .w-10 {
+  transition: transform 380ms var(--ease-spring),
+              box-shadow 380ms var(--ease-spring),
+              background-color 300ms ease,
+              color 300ms ease;
+  will-change: transform;
+}
+.denali-card:hover .w-12,
+.denali-card:hover .w-14,
+.denali-card:hover .w-10 {
+  transform: translateY(-4px) scale(1.1) rotate(4deg);
+  box-shadow: 0 8px 24px rgba(216, 168, 72, 0.45);
 }
 
 /* Primary CTA Button: Navy background with White text, Gold hover */
@@ -95,14 +122,16 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFFFFF;
   font-weight: 600;
   border: 1px solid transparent;
-  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(0, 40, 88, 0.2);
+  transition: all 300ms var(--ease-spring);
+  box-shadow: 0 4px 14px rgba(0, 40, 88, 0.25);
+  position: relative;
+  overflow: hidden;
 }
 .btn-primary:hover, .btn-navy:hover {
   background-color: #D8A848;
   color: #002858;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(216, 168, 72, 0.35);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(216, 168, 72, 0.4);
 }
 
 /* Secondary CTA Button: Metallic Gold */
@@ -111,14 +140,16 @@ h1, h2, h3, h4, h5, h6 {
   color: #002858;
   font-weight: 700;
   border: 1px solid transparent;
-  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(216, 168, 72, 0.25);
+  transition: all 300ms var(--ease-spring);
+  box-shadow: 0 4px 16px rgba(216, 168, 72, 0.35);
+  position: relative;
+  overflow: hidden;
 }
 .btn-gold:hover, .btn-amber:hover {
   background-color: #C59637;
   color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(197, 150, 55, 0.4);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(197, 150, 55, 0.5), 0 0 12px rgba(216, 168, 72, 0.4);
 }
 
 /* Outline Button */
@@ -127,11 +158,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #D8A848;
   border: 1px solid #D8A848;
   font-weight: 600;
-  transition: all 250ms ease;
+  transition: all 300ms ease;
 }
 .btn-outline-gold:hover {
   background-color: #D8A848;
   color: #002858;
+  transform: translateY(-2px);
 }
 
 /* Product & Service Image Hover Zoom */
@@ -140,61 +172,79 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 .product-img-wrapper img {
-  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease;
+  transition: transform 700ms var(--ease-smooth), filter 400ms ease;
+  will-change: transform;
 }
 .product-img-wrapper:hover img {
   transform: scale(1.08);
   filter: brightness(1.03);
 }
 
-/* Smooth Fade In Up Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Site-Wide Scroll Reveal Animations */
+/* Site-Wide Scroll Reveal Animations (Visible, Luxurious & Staggered) */
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(42px) scale(0.96);
+  transition: opacity 0.85s var(--ease-smooth),
+              transform 0.85s var(--ease-smooth);
   will-change: opacity, transform;
 }
 .scroll-reveal.revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
-/* Stagger Delays for Sequential Elements */
-.scroll-reveal[data-delay="1"] {
-  transition-delay: 80ms;
+/* Stagger Delays for Sequential Elements (Clear, Cascading Wave Timing) */
+.scroll-reveal[data-delay="1"] { transition-delay: 80ms; }
+.scroll-reveal[data-delay="2"] { transition-delay: 200ms; }
+.scroll-reveal[data-delay="3"] { transition-delay: 320ms; }
+.scroll-reveal[data-delay="4"] { transition-delay: 440ms; }
+.scroll-reveal[data-delay="5"] { transition-delay: 560ms; }
+.scroll-reveal[data-delay="6"] { transition-delay: 680ms; }
+
+/* Gentle Floating Animation for Badges and Floating Pills */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
-.scroll-reveal[data-delay="2"] {
-  transition-delay: 160ms;
-}
-.scroll-reveal[data-delay="3"] {
-  transition-delay: 240ms;
-}
-.scroll-reveal[data-delay="4"] {
-  transition-delay: 320ms;
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
 }
 
-/* Card Icon Hover Micro-Interactions */
-.denali-card .w-12, .denali-card .w-10 {
-  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+/* Shimmer Light Reflection on Hover */
+@keyframes lightSheen {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
 }
-.denali-card:hover .w-12, .denali-card:hover .w-10 {
-  transform: scale(1.08) rotate(3deg);
-  box-shadow: 0 4px 14px rgba(216, 168, 72, 0.35);
+.hover-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.hover-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+.hover-sheen:hover::after {
+  animation: lightSheen 1s ease-in-out forwards;
 }
 
 /* Reduced motion preference */

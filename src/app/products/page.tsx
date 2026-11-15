@@ -102,11 +102,12 @@ export default function ProductsPage() {
 
         {/* Product Cards Grid: High-Impact Competitor Style (Large Photos, No Short Desc) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
-          {filteredProducts.map((product) => (
+          {filteredProducts.map((product, index) => (
             <div
               key={product.id}
               onClick={() => setSelectedProduct(product)}
-              className="bg-white rounded-2xl border border-slate-200 hover:border-[#D8A848] transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-6 sm:p-7 group cursor-pointer"
+              className="bg-white rounded-2xl border border-slate-200 hover:border-[#D8A848] transition-all duration-300 hover:shadow-xl flex flex-col justify-between p-6 sm:p-7 group cursor-pointer denali-card scroll-reveal"
+              data-delay={String((index % 4) + 1)}
             >
               <div>
                 {/* 1. Header: Category Badge & Quality Standard */}

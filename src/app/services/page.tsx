@@ -87,9 +87,10 @@ export default function ServicesPage() {
                 <div
                   key={category.id}
                   id={category.slug}
-                  className={`bg-white rounded-2xl border border-[#AFC0D2]/40 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 denali-card grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch ${
+                  className={`bg-white rounded-2xl border border-[#AFC0D2]/40 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 denali-card grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch scroll-reveal ${
                     isReversed ? "lg:flex-row-reverse" : ""
                   }`}
+                  data-delay={String((index % 3) + 1)}
                 >
                   {/* Visual Image Column */}
                   <div

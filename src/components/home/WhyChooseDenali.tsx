@@ -32,7 +32,7 @@ export default function WhyChooseDenali() {
     <section className="py-20 sm:py-24 bg-white border-b border-[#AFC0D2]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4 scroll-reveal">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002858]/10 text-[#002858] text-xs font-bold uppercase tracking-wider">
             <ShieldCheck className="w-4 h-4 text-[#D8A848]" />
             <span>Commercial Advantages</span>
@@ -53,7 +53,8 @@ export default function WhyChooseDenali() {
             return (
               <div
                 key={index}
-                className="p-8 rounded-xl bg-[#F4F6F9] border border-[#AFC0D2]/40 hover:border-[#D8A848] transition-all duration-300 denali-card flex flex-col justify-between group shadow-xs"
+                className="p-8 rounded-xl bg-[#F4F6F9] border border-[#AFC0D2]/40 hover:border-[#D8A848] transition-all duration-300 denali-card flex flex-col justify-between group shadow-xs scroll-reveal"
+                data-delay={String(index + 1)}
               >
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-xl bg-white border border-[#AFC0D2]/40 flex items-center justify-center text-[#002858] group-hover:bg-[#002858] group-hover:text-[#D8A848] transition-all duration-300 shadow-xs">

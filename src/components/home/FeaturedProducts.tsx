@@ -14,34 +14,36 @@ export default function FeaturedProducts() {
     <section className="py-24 bg-white border-b border-[#DCE5EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 scroll-reveal">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#087E8B]/10 text-[#087E8B] text-xs font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002858]/10 text-[#002858] text-xs font-bold uppercase tracking-wider">
               <span>Verified Portfolio</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B2035] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#002858] tracking-tight">
               Featured Engineering Products
             </h2>
-            <p className="text-[#64748B] text-base leading-relaxed">
+            <div className="w-16 h-1 bg-[#D8A848] rounded-full" />
+            <p className="text-[#172B45] text-base leading-relaxed pt-1">
               Precision equipment sourced directly from premier global manufacturers, meeting rigorous regional performance and civil specifications.
             </p>
           </div>
 
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-md btn-amber text-sm font-semibold tracking-wide self-start md:self-auto flex-shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md btn-gold text-sm font-bold tracking-wide self-start md:self-auto flex-shrink-0"
           >
             <span>View Products</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* Product Cards Grid */}
+        {/* Product Cards Grid with Staggered Entrance */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {featuredProducts.map((product) => (
+          {featuredProducts.map((product, index) => (
             <div
               key={product.id}
-              className="bg-white rounded-xl border border-[#DCE5EB] p-5 flex flex-col justify-between denali-card group"
+              className="bg-white rounded-xl border border-[#AFC0D2]/40 hover:border-[#D8A848] p-5 flex flex-col justify-between denali-card group shadow-xs hover:shadow-md scroll-reveal"
+              data-delay={String((index % 4) + 1)}
             >
               <div>
                 {/* Category Badge at Top */}

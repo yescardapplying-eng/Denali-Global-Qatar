@@ -28,7 +28,7 @@ export default function BusinessSolutions() {
     <section className="py-20 sm:py-24 bg-[#F4F6F9]" id="solutions">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4 scroll-reveal">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002858]/10 text-[#002858] text-xs font-bold uppercase tracking-wider">
             <span>Engineering Capabilities</span>
           </div>
@@ -43,13 +43,14 @@ export default function BusinessSolutions() {
 
         {/* 3 Primary Division Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {topCategories.map((item) => {
+          {topCategories.map((item, index) => {
             const Icon = iconMap[item.iconName] || Cpu;
 
             return (
               <div
                 key={item.id}
-                className="group relative bg-white rounded-xl overflow-hidden border border-[#AFC0D2]/40 flex flex-col justify-between denali-card shadow-xs"
+                className="group relative bg-white rounded-xl overflow-hidden border border-[#AFC0D2]/40 flex flex-col justify-between denali-card shadow-xs scroll-reveal"
+                data-delay={String(index + 1)}
               >
                 <div>
                   {/* Card Image with Hover Zoom */}

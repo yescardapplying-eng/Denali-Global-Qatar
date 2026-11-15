@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { companyData } from "@/data/company";
-import { ArrowRight, ShieldCheck, Building2, Wrench } from "lucide-react";
+import { ArrowRight, ShieldCheck, Building2, Wrench, Sparkles } from "lucide-react";
 
 export default function IntroSection() {
   const pillars = [
@@ -23,12 +23,13 @@ export default function IntroSection() {
   ];
 
   return (
-    <section className="py-20 bg-white border-b border-[#AFC0D2]/30">
+    <section className="py-20 sm:py-24 bg-white border-b border-[#AFC0D2]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Heading & Value Proposition */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-6 scroll-reveal" data-delay="1">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#002858]/10 text-[#002858] text-xs font-bold uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5 text-[#D8A848]" />
               <span>Corporate Overview</span>
             </div>
 
@@ -36,6 +37,8 @@ export default function IntroSection() {
               Engineering Expertise. <br />
               <span className="text-[#D8A848]">Global Perspective.</span>
             </h2>
+
+            <div className="w-16 h-1 bg-[#D8A848] rounded-full" />
 
             <p className="text-[#172B45] text-base sm:text-lg leading-relaxed">
               <strong>Denali Global Trading and Contracting</strong> is a specialized engineering, trading, and contracting organization based in Doha, Qatar. We support MEP contractors, consulting engineers, and commercial property developers with dependable mechanical, electrical, and plumbing solutions.
@@ -49,25 +52,26 @@ export default function IntroSection() {
             <div className="pt-2">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md btn-navy text-sm font-bold tracking-wide shadow-md"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md btn-navy text-sm font-bold tracking-wide shadow-md group"
               >
                 <span>About Us</span>
-                <ArrowRight className="w-4 h-4 text-[#D8A848]" />
+                <ArrowRight className="w-4 h-4 text-[#D8A848] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Key Business Pillars */}
+          {/* Right Column: Key Business Pillars with Staggered Entrance */}
           <div className="lg:col-span-5 space-y-4">
             {pillars.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div
                   key={idx}
-                  className="p-6 rounded-xl bg-[#F4F6F9] border border-[#AFC0D2]/40 hover:border-[#D8A848] transition-all duration-300 denali-card shadow-xs"
+                  className="p-6 rounded-xl bg-[#F4F6F9] border border-[#AFC0D2]/40 hover:border-[#D8A848] transition-all duration-300 denali-card shadow-xs scroll-reveal"
+                  data-delay={String(idx + 2)}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-white border border-[#AFC0D2]/40 shadow-xs flex items-center justify-center flex-shrink-0 text-[#002858]">
+                    <div className="w-12 h-12 rounded-xl bg-white border border-[#AFC0D2]/40 shadow-xs flex items-center justify-center flex-shrink-0 text-[#002858] group-hover:bg-[#002858] group-hover:text-[#D8A848] transition-all duration-300">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div className="space-y-1">
