@@ -19,7 +19,8 @@ import {
   Cpu,
   Gauge,
   RefreshCw,
-  Layers
+  Layers,
+  Activity
 } from "lucide-react";
 
 const categoryIconMap: { [key: string]: React.ElementType } = {
@@ -28,6 +29,7 @@ const categoryIconMap: { [key: string]: React.ElementType } = {
   "/services/design-services": Gauge,
   "/services/retrofit-fabrication": RefreshCw,
   "/services/service-maintenance": ShieldCheck,
+  "/technical-services": Activity,
 };
 
 export default function Header() {
@@ -209,7 +211,7 @@ export default function Header() {
                             Service Divisions
                           </span>
                           <span className="text-[10px] font-semibold text-[#D8A848] bg-[#D8A848]/10 px-2 py-0.5 rounded-full">
-                            5 Categories
+                            Specialized Divisions
                           </span>
                         </div>
 

@@ -11,7 +11,8 @@ import {
   Gauge,
   RefreshCw,
   ShieldCheck,
-  ArrowRight
+  ArrowRight,
+  Activity
 } from "lucide-react";
 
 interface CategoryDropdownSelectorProps {
@@ -89,6 +90,18 @@ export default function CategoryDropdownSelector({
             </button>
           );
         })}
+
+        <button
+          type="button"
+          onClick={() => router.push("/technical-services")}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap bg-[#F4F6F9] text-[#002858] hover:bg-[#AFC0D2]/20"
+        >
+          <Activity className="w-3.5 h-3.5 text-[#D8A848]" />
+          <span>Denali Technical Services</span>
+          <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-white/30 text-current font-normal">
+            TAB &amp; AMC
+          </span>
+        </button>
       </div>
 
       {/* Dropdown Selector (Mobile / Tablet & Quick Switcher) */}
@@ -187,6 +200,32 @@ export default function CategoryDropdownSelector({
                   </button>
                 );
               })}
+
+              <button
+                type="button"
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push("/technical-services");
+                }}
+                className="w-full flex items-start gap-2.5 p-2 rounded-lg text-left transition-colors hover:bg-[#F4F6F9] text-[#002858] border-t border-slate-100"
+              >
+                <div className="w-7 h-7 rounded-md bg-[#D8A848]/20 text-[#002858] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Activity className="w-4 h-4 text-[#D8A848]" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold truncate text-[#002858]">
+                      Denali Technical Services
+                    </span>
+                    <span className="text-[10px] px-1.5 py-0.2 rounded font-semibold ml-1 flex-shrink-0 bg-[#D8A848]/20 text-[#002858]">
+                      Specialized
+                    </span>
+                  </div>
+                  <p className="text-[10px] line-clamp-1 mt-0.5 text-slate-500">
+                    Certified TAB Commissioning, AMC Maintenance &amp; Retrofits
+                  </p>
+                </div>
+              </button>
             </div>
           </div>
         )}

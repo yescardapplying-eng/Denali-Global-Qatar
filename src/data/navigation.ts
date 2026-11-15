@@ -44,6 +44,12 @@ export const serviceNavCategories: NavChildItem[] = [
     href: "/services/service-maintenance",
     desc: "24/7 facility AMC, preventive care & system overhauls",
     count: 1
+  },
+  {
+    name: "Denali Technical Services",
+    href: "/technical-services",
+    desc: "Certified TAB commissioning, AMC maintenance & retrofits",
+    count: 4
   }
 ];
 
@@ -55,7 +61,6 @@ export const mainNavItems: NavItem[] = [
     hasDropdown: true,
     children: serviceNavCategories
   },
-  { name: "Denali Technical Services", href: "/technical-services" },
   { name: "Our Products", href: "/products" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact", isCta: true },
@@ -69,10 +74,10 @@ export const footerQuickLinks1: NavItem[] = [
   { name: "Design Services", href: "/services/design-services" },
   { name: "Retrofit Fabrication", href: "/services/retrofit-fabrication" },
   { name: "Service & Maintenance", href: "/services/service-maintenance" },
+  { name: "Denali Technical Services", href: "/technical-services" },
 ];
 
 export const footerQuickLinks2: NavItem[] = [
-  { name: "Denali Technical Services", href: "/technical-services" },
   { name: "Our Products", href: "/products" },
   { name: "About Us", href: "/about" },
   { name: "Contact Us", href: "/contact" },
